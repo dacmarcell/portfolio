@@ -1,6 +1,6 @@
 ---
 title: "edux"
-featured: true
+featured: false
 draft: false
 tags:
   - docker
