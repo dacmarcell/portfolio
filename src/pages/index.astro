@@ -49,12 +49,12 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
       <h2 class="about-me-title">sobre mim</h2>
       <div class="about-me-grid">
         <Photo />
-        <p>
-          Marcell, cientista da computação em formação, desenvolvedor de
-          software back-end. Liderança do setor de desenvolvimento de software
-          na empresa Diamantes Consultoria. Trabalhando atualmente com a
-          linguagem Typescript.
-        </p>
+        <div>
+          <p>Olá, eu sou <b>Marcell</b>! 👋</p>
+          <p>Bacharelando em <b>Ciência da Computação</b>, Desenvolvedor de Software Full-Stack Líder na empresa Diamantes Consultoria. Aprecio e aplico boas práticas de desenvolvimento de software, como os importantes conceitos <b>DRY</b>, <b>SOLID</b>, <b>KISS</b> e <b>Clean Code</b>.</p>
+          <p>Também atuo na implementação de <b>design patterns</b> e soluções padronizadas quando necessário. Tendo em foco o desenvolvimento de aplicações <b>escaláveis</b> e <b>performáticas</b>, utilizando tecnologias da atualidade.</p>
+          <p>Atualmente trabalho com o ecossistema <b>Typescript</b> com foco na Web, utilizando <b>React</b>, <b>Next.js</b>, <b>Vue.js</b> e <b>Node.js</b>. Também tenho projetos pessoais em <b>Rust</b>. Tenho um gato chamado Django e não gosto de café sem açúcar. Sou curioso e inquieto. Sempre estudando algo novo ou fazendo algum projeto.</p>
+        </div>
       </div>
     </section>
 
@@ -63,7 +63,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
     {
       featuredProjects.length > 0 && (
         <section id="featured">
-          <h2>projetos</h2>
+          <h2>projetos selecionados</h2>
           {featuredProjects.map(({ data, slug }) => (
             <Card
               href={`/projects/${slug}`}
@@ -71,6 +71,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
               secHeading={false}
             />
           ))}
+          <a href="/projects">projetos</a>
         </section>
       )
     }
