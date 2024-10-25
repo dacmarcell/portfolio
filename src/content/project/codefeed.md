@@ -7,7 +7,7 @@ tags:
   - angular
 description: "Codefeed eh um projeto web cujo objetivo eh medir o conhecimento de usuarios na linguagem C#."
 githubURL: "https://github.com/dacmarcell/codefeed"
-pubDateTime: 2024-08-18T10:30:00Z
+pubDatetime: 2024-08-18T10:30:00Z
 ---
 
 # Quiz de C#

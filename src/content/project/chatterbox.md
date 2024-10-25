@@ -7,7 +7,7 @@ tags:
   - Websocket
 description: "ChatterBox é um aplicativo de chat em tempo real desenvolvido com WebSockets utilizando FastAPI. Ele permite que os usuários se comuniquem de forma instantânea e eficiente, proporcionando uma experiência de chat simples e interativa."
 githubURL: "https://github.com/dacmarcell/chatterbox"
-pubDateTime: 2024-10-25T12:18:00Z
+pubDatetime: 2024-10-25T12:18:00Z
 ---
 
 # ChatterBox
