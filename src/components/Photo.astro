@@ -1,5 +1,11 @@
+---
+import { Image } from "astro:assets";
+import image from '/assets/me/me.jpg'
+
+---
+
 <div>
-  <img src="/assets/me/me.jpg" />
+  <Image src={image} alt="my photo" />
 </div>
 
 <style>
