@@ -8,7 +8,7 @@ tags:
   - mock
 description: "Site destinado a uma campanha política para um político da região."
 deployURL: "https://www.barroneles.com/"
-pubDatetime: 2024-10-10T11:00:00Z
+pubDatetime: 2024-09-10T11:00:00Z
 ---
 
 Site destinado a uma campanha política para um político da região.
