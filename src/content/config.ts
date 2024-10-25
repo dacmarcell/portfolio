@@ -28,7 +28,7 @@ const project = defineCollection({
   schema: ({ image }) =>
     z.object({
       author: z.string().default(SITE.author),
-      pubDatetime: z.date().default(new Date()),
+      pubDatetime: z.date(),
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
