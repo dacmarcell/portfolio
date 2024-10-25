@@ -1,6 +1,6 @@
 ---
 title: "gamerave"
-featured: false
+featured: true
 draft: false
 tags:
   - docker
