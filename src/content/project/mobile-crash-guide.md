@@ -1,6 +1,6 @@
 ---
 title: "mobile-crash-guide"
-featured: true
+featured: false
 draft: false
 tags:
   - typescript
