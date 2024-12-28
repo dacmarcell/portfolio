@@ -8,7 +8,6 @@ draft: false
 tags:
   - criptografia
   - estrutura de dados
-  - xor
 description: inicialmente o algoritmo encripta um input e o decripta em seguida com...
 ---
 
