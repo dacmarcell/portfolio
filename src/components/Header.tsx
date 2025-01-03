@@ -1,6 +1,7 @@
 import { config } from "@/utils/config";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { navigation } from "../mocks/navigation.json";
 
 export default function Header() {
   return (
@@ -13,31 +14,15 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex gap-x-6">
             {/* Navigation links */}
-            <li>
-              <Link href="/" className="hover:text-gray-300">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-gray-300">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/portfolio" className="hover:text-gray-300">
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="hover:text-gray-300">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-gray-300">
-                Contact
-              </Link>
-            </li>
+            {navigation.map((item) => {
+              return (
+                <li key={item.id}>
+                  <Link href={item.endpoint} className="hover:text-gray-300">
+                    {item.formattedName}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         {/* Social media icons */}
