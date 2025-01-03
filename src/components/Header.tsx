@@ -9,20 +9,14 @@ export default function Header() {
       {/* Header container */}
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Website title */}
-        <h1 className="text-xl font-semibold">Jordan Thirkle</h1>
+        <div>
+          <h1 className="text-lg font-semibold">Marcell</h1>
+          <h2>Fullstack web dev</h2>
+        </div>
         {/* Navigation menu */}
         <nav className="hidden md:block">
           <ul className="flex gap-x-6">
-            {/* Navigation links */}
-            {navigation.map((item) => {
-              return (
-                <li key={item.id}>
-                  <Link href={item.endpoint} className="hover:text-gray-300">
-                    {item.formattedName}
-                  </Link>
-                </li>
-              );
-            })}
+            <NavigationLinks />
           </ul>
         </nav>
         {/* Social media icons */}
@@ -33,6 +27,18 @@ export default function Header() {
       </div>
     </header>
   );
+}
+
+function NavigationLinks() {
+  return navigation.map((item) => {
+    return (
+      <li key={item.id}>
+        <Link href={item.endpoint} className="hover:text-gray-300">
+          {item.formattedName}
+        </Link>
+      </li>
+    );
+  });
 }
 
 // Define the SocialIcons component
