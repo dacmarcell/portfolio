@@ -1,7 +1,8 @@
-import { config } from "@/utils/config";
+import personalConfig from "@/utils/personalConfig";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { navigation } from "../mocks/navigation.json";
+import { MdEmail } from "react-icons/md";
 
 export default function Header() {
   return (
@@ -47,18 +48,25 @@ function SocialIcons() {
     <div className="flex gap-x-4">
       {/* GitHub icon */}
       <a
-        href={config.social_links.github}
+        href={personalConfig.social_links.github}
         target="_blank"
         rel="noopener noreferrer"
       >
         <FaGithub className="text-white hover:text-gray-300" />
       </a>
       <a
-        href={config.social_links.linkedin}
+        href={personalConfig.social_links.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >
         <FaLinkedin className="text-white hover:text-gray-300" />
+      </a>
+      <a
+        href={personalConfig.social_links.email}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <MdEmail className="text-white hover:text-gray-300" />
       </a>
       {/* Add more social media icons as needed */}
     </div>
