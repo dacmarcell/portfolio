@@ -1,7 +1,6 @@
 {
   "navigation": [
     { "id": 1, "formattedName": "Início", "endpoint": "/" },
-    { "id": 2, "formattedName": "Projetos", "endpoint": "/projetos" },
-    { "id": 3, "formattedName": "Postagens", "endpoint": "/postagens" }
+    { "id": 2, "formattedName": "Projetos", "endpoint": "/projetos" }
   ]
 }
