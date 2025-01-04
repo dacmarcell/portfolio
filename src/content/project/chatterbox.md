@@ -1,6 +1,6 @@
 ---
 title: "chatterbox"
-featured: true
+featured: false
 draft: false
 tags:
   - FastAPI
