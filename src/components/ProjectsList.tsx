@@ -10,6 +10,8 @@ export default function ProjectsList() {
         {projects.map((project) => {
           return (
             <Card
+              isProject
+              id={project.id.toString()}
               key={project.id}
               title={project.title}
               description={project.description}
