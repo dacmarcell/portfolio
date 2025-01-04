@@ -3,6 +3,7 @@ import { projects } from "../mocks/projects.json";
 import Card from "./Card";
 import Title from "./ui/Title";
 import Link from "next/link";
+import shuffle from "@/utils/shuffle";
 
 interface ProjectsListProps {
   onlyFavorites?: boolean;
@@ -21,7 +22,7 @@ export default function ProjectsList(props: ProjectsListProps) {
     <div>
       <Title>Projetos</Title>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project) => {
+        {shuffle(filteredProjects).map((project) => {
           return (
             <Card
               isProject
