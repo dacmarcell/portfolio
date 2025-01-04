@@ -28,7 +28,7 @@ export default function Home() {
         <hr />
         <PersonalPhoto />
         <hr />
-        <ProjectsList />
+        <ProjectsList onlyFavorites />
       </main>
     </div>
   );
