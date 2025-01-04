@@ -9,11 +9,10 @@ interface CardProps {
   description: string;
   id: string;
   isProject?: boolean;
-  isPost?: boolean;
 }
 
 export default function Card(props: CardProps) {
-  const { description, title, id, isPost, isProject } = props;
+  const { description, title, id, isProject } = props;
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -21,9 +20,6 @@ export default function Card(props: CardProps) {
 
     if (isProject) {
       router.push(`/projetos/${id}`);
-    }
-    if (isPost) {
-      router.push(`/postagens/${id}`);
     }
   };
 
