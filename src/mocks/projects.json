@@ -4,37 +4,43 @@
       "id": 1,
       "title": "Barro Neles",
       "description": "Site destinado a uma campanha política para vereador de uma cidade no interior da Bahia.",
-      "url": "https://www.barroneles.com/"
+      "url": "https://www.barroneles.com/",
+      "isFavorite": true
     },
     {
       "id": 2,
       "title": "ChatterBox",
       "description": "ChatterBox é um aplicativo de chat em tempo real desenvolvido com WebSockets utilizando FastAPI. Ele permite que os usuários se comuniquem de forma instantânea e eficiente, proporcionando uma experiência de chat simples e interativa.",
-      "url": "https://github.com/dacmarcell/chatterbox"
+      "url": "https://github.com/dacmarcell/chatterbox",
+      "isFavorite": false
     },
     {
       "id": 3,
       "title": "CryptoGuardian",
       "description": "API desenvolvida com o intuito de facilitar transações com moedas físicas para moedas digitais, especificamente Ethereum. Basta passar o valor mínimo e máximo que você tem disponível para fazer a transação e a API vai validar a transação como true (possível de ser feita) e false (impossível de ser feita). É uma API de validacao.",
-      "url": "https://github.com/dacmarcell/cryptoguardian"
+      "url": "https://github.com/dacmarcell/cryptoguardian",
+      "isFavorite": true
     },
     {
       "id": 4,
       "title": "GameRave",
       "description": "GameRave é uma API construída para que os usuários podem criar jogos e fornecer críticas sobre eles. Além disso, apresenta um sistema de likes e dislikes. Perfeito para você desenvolver sua interface frontend com esta API completamente gratuita.",
-      "url": "https://github.com/dacmarcell/gamerave"
+      "url": "https://github.com/dacmarcell/gamerave",
+      "isFavorite": false
     },
     {
       "id": 5,
       "title": "IdeaPlanAI",
       "description": "Um analisador de projetos que utiliza IA para calcular os requisitos funcionais, não funcionais, estimativa de tempo, tecnologias recomendadas e desafios em potencial a partir do projeto proposto.",
-      "url": "https://github.com/dacmarcell/IdeaPlanAI"
+      "url": "https://github.com/dacmarcell/IdeaPlanAI",
+      "isFavorite": false
     },
     {
       "id": 6,
       "title": "DevStackAPI",
       "description": "Uma API para gerenciar dados de perfis de portfólios de desenvolvedores de software. Permite customizar individualmente por perfil. O projeto foi desenvolvido com C#, ASP.NET CORE 8, Entity Framework, SQL Server e Docker.",
-      "url": "https://github.com/dacmarcell/DevStackAPI"
+      "url": "https://github.com/dacmarcell/DevStackAPI",
+      "isFavorite": true
     }
   ]
 }
