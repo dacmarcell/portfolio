@@ -1,7 +1,9 @@
+import Title from "./ui/Title";
+
 export default function AboutMe() {
   return (
-    <>
-      <h1 className="text-4xl font-semibold  mt-16 mb-8">Sobre mim</h1>
+    <div>
+      <Title>Sobre mim</Title>
       <p className="text-lg">
         Bacharelando em Ciência da Computação, Desenvolvedor Web FullStack com
         aproximadamente 1 ano de experiência. Aprecio conceitos como DRY, SOLID,
@@ -15,6 +17,6 @@ export default function AboutMe() {
         amo pizza. Sou curioso e inquieto. Sempre estudando algo novo ou fazendo
         algum projeto.
       </p>
-    </>
+    </div>
   );
 }
