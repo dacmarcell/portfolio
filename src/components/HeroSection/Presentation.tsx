@@ -2,7 +2,7 @@ import personalConfig from "@/utils/personalConfig";
 
 export default function Presentation() {
   return (
-    <div className="bg-background dark:bg-background-dark flex flex-col items-center justify-center text-center">
+    <div className="bg-background dark:bg-background-dark flex flex-col justify-center p-10">
       <h1 className="text-5xl font-bold">Olá! Me chamo Marcell.</h1>
       <h2 className="text-2xl font-semibold">
         Desenvolvendo softwares de qualidade como desenvolvedor web fullstack
@@ -21,6 +21,7 @@ export default function Presentation() {
         hover:bg-green-600
         transition
         duration-300
+        w-max
       "
       >
         Me contrate
