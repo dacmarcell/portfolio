@@ -2,13 +2,13 @@ import { Commit } from "@/app/repositorios/repositorio/page";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import {
-  CartesianGrid,
-  Line,
-  LineChart,
   ResponsiveContainer,
+  CartesianGrid,
+  LineChart,
   Tooltip,
   XAxis,
   YAxis,
+  Line,
 } from "recharts";
 
 interface CommitsGraphProps {
