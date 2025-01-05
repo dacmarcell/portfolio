@@ -6,7 +6,7 @@ export default function Presentation() {
   return (
     <div className="bg-background dark:bg-background-dark flex flex-col justify-center p-10">
       <Biography />
-      <div className="mt-5 flex flex-row items-center">
+      <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
         <ContractMeButton />
         <ProjectsLink />
       </div>
