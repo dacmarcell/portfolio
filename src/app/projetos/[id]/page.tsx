@@ -17,19 +17,19 @@ export default async function Page({
   if (!project) {
     return (
       <main>
-        <h1>Projeto não encontrado</h1>
         <CustomLink href="/projetos">Voltar</CustomLink>
+        <h1>Projeto não encontrado</h1>
       </main>
     );
   }
 
   return (
     <main className="p-5">
+      <CustomLink href="/projetos">Voltar</CustomLink>
       <Title>{project.title}</Title>
       <p className="text-foreground dark:text-whitetext-black text-lg sm:text-xl my-4">
         {project.description}
       </p>
-      <CustomLink href="/projetos">Voltar</CustomLink>
     </main>
   );
 }
