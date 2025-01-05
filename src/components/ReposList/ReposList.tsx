@@ -1,7 +1,7 @@
 import { getRepositories } from "@/functions/repositories";
-import Card from "./Card";
-import Title from "./ui/Title";
-import Link from "next/link";
+import Card from "../Card";
+import Title from "../ui/Title";
+import CustomLink from "../ui/CustomLink";
 
 type Repository = {
   id: number;
@@ -12,19 +12,18 @@ type Repository = {
 export default async function ReposList() {
   const repos = await getRepositories();
 
-  if (repos.message.includes("API rate limit exceeded") || !repos) {
+  if (repos.message.includes("API rate limit exceeded")) {
     return (
       <div>
-        <h1>Oops! Não foi possível carregar os repositórios.</h1>
-        <h2>Possíveis razões:</h2>
-        <ol>
-          <li>Verifique sua conexão com a internet.</li>
-          <li>
-            O limite de solicitações por hora na api do github para obter essas
-            informações foi atingido. Volte mais tarde.
-          </li>
-          <Link href="/repositorios">Voltar</Link>
-        </ol>
+        <h1 className="text-2xl font-bold">
+          Oops! Não foi possível carregar os repositórios.
+        </h1>
+        <h2 className="text-xl font-semibold">Motivo:</h2>
+        <p>
+          O limite de solicitações por hora na api do github para obter essas
+          informações foi atingido. Volte mais tarde.
+        </p>
+        <CustomLink href="/repositorios">Voltar</CustomLink>
       </div>
     );
   }
