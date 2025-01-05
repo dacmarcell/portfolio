@@ -30,7 +30,7 @@ function ContractMeButton() {
     <a
       target="_blank"
       href={personalConfig.social_links.linkedin}
-      className="text-black dark:text-white bg-green-500 hover:bg-green-600 px-4 py-2 mr-2 rounded-md transition duration-300 w-max"
+      className="text-black dark:text-white bg-green-500 hover:bg-green-600 px-4 py-2 mr-2 rounded-md transition duration-300 w-max text-lg hover:shadow-lg"
     >
       Me contrate
     </a>
