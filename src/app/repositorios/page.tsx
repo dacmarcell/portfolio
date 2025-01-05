@@ -1,4 +1,4 @@
-import ReposList from "@/components/ReposList";
+import ReposList from "@/components/ReposList/ReposList";
 
 export default function Page() {
   return (
