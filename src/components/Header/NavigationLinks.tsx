@@ -1,5 +1,5 @@
 import Link from "next/link";
-import json from "../../mocks/navigation.json";
+import json from "../../../public/mocks/navigation.json";
 
 export default function NavigationLinks() {
   return json.navigation.map((item) => {
