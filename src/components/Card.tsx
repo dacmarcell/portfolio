@@ -3,23 +3,32 @@
 import { useRouter } from "next/navigation";
 import Button from "./ui/Button";
 import ArrowIcon from "./ui/ArrowIcon";
+import { useRepositoryContext } from "@/contexts/RepositoryContext";
 
 interface CardProps {
   title: string;
   description: string;
   id: string;
   isProject?: boolean;
+  isRepository?: boolean;
 }
 
 export default function Card(props: CardProps) {
-  const { description, title, id, isProject } = props;
+  const { description, title, id, isProject, isRepository } = props;
+
   const router = useRouter();
+  const { setID } = useRepositoryContext();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     if (isProject) {
       router.push(`/projetos/${id}`);
+    }
+
+    if (isRepository) {
+      router.push("/repositorios/repositorio");
+      setID(parseInt(id));
     }
   };
 
