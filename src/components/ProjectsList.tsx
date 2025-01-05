@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { projects } from "../mocks/projects.json";
+import json from "../../public/mocks/projects.json";
 import Card from "./Card";
 import Title from "./ui/Title";
 import shuffle from "@/utils/shuffle";
@@ -14,8 +14,8 @@ export default function ProjectsList(props: ProjectsListProps) {
 
   const filteredProjects = useMemo(() => {
     return onlyFavorites
-      ? projects.filter((project) => project.isFavorite)
-      : projects;
+      ? json.projects.filter((project) => project.isFavorite)
+      : json.projects;
   }, [onlyFavorites]);
 
   return (
