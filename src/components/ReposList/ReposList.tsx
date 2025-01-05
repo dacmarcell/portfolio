@@ -9,10 +9,13 @@ type Repository = {
   description: string;
 };
 
+const doesRateLimitExceeded = (message?: string) =>
+  message?.includes("API rate limit exceeded") ?? false;
+
 export default async function ReposList() {
   const repos = await getRepositories();
 
-  if (repos.message.includes("API rate limit exceeded")) {
+  if (doesRateLimitExceeded(repos.message)) {
     return (
       <div>
         <h1 className="text-2xl font-bold">
