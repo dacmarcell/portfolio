@@ -1,7 +1,5 @@
 export const getRepositories = async () => {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_BASE_URL + "/api/github/repos"
-  );
+  const res = await fetch("https://api.github.com/users/dacmarcell/repos");
   const data = await res.json();
 
   return data;
