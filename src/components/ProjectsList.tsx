@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import { projects } from "../mocks/projects.json";
 import Card from "./Card";
 import Title from "./ui/Title";
-import Link from "next/link";
 import shuffle from "@/utils/shuffle";
+import CustomLink from "./ui/CustomLink";
 
 interface ProjectsListProps {
   onlyFavorites?: boolean;
@@ -34,21 +34,7 @@ export default function ProjectsList(props: ProjectsListProps) {
           );
         })}
         {onlyFavorites ? (
-          <Link
-            href="/projetos"
-            className="
-          text-lg
-          text-foreground
-          hover:text-accent 
-          dark:hover:text-accent 
-          underline
-          cursor-pointer
-          text-black
-          dark:text-white
-        "
-          >
-            Ver todos
-          </Link>
+          <CustomLink href="/projetos">Ver todos</CustomLink>
         ) : null}
       </div>
     </div>
