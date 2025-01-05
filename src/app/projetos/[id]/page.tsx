@@ -1,9 +1,9 @@
-import { projects } from "../../../mocks/projects.json";
+import json from "../../../../public/mocks/projects.json";
 import Title from "@/components/ui/Title";
 import CustomLink from "@/components/ui/CustomLink";
 
 async function getProjectByID(id: number) {
-  return isNaN(id) ? null : projects.find((project) => project.id === id);
+  return isNaN(id) ? null : json.projects.find((project) => project.id === id);
 }
 
 export default async function Page({
