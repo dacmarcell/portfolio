@@ -1,4 +1,4 @@
-import PersonalPhoto from "../PersonalPhoto";
+import PersonalPhoto from "./PersonalPhoto";
 import Presentation from "./Presentation";
 
 export default function HeroSection() {
