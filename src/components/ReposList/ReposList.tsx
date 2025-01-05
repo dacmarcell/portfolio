@@ -17,7 +17,8 @@ export default async function ReposList() {
 
   if (doesRateLimitExceeded(repos.message)) {
     return (
-      <div>
+      <>
+        <CustomLink href="/repositorios">Voltar</CustomLink>
         <h1 className="text-2xl font-bold">
           Oops! Não foi possível carregar os repositórios.
         </h1>
@@ -26,8 +27,7 @@ export default async function ReposList() {
           O limite de solicitações por hora na api do github para obter essas
           informações foi atingido. Volte mais tarde.
         </p>
-        <CustomLink href="/repositorios">Voltar</CustomLink>
-      </div>
+      </>
     );
   }
 
