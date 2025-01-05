@@ -35,12 +35,14 @@ export function RepositoryWrapper(props: { children: React.ReactNode }) {
   const [ID, setID] = useState<number | null>(null);
 
   useEffect(() => {
-    const getRepositoryByID = () => {
-      const foundRepo = repositories.find((repo) => repo.id === ID) ?? null;
+    const getRepositoryByID = (repos: Array<Repository>) => {
+      const foundRepo = repos.find((repo) => repo.id === ID) ?? null;
       setFoundRepository(foundRepo);
     };
 
-    getRepositoryByID();
+    if (repositories.length > 0) {
+      getRepositoryByID(repositories);
+    }
   }, [ID, repositories]);
 
   useEffect(() => {
