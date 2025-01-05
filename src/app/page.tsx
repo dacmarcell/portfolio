@@ -1,19 +1,16 @@
-import AboutMe from "@/components/AboutMe";
-import PersonalPhoto from "@/components/PersonalPhoto";
-import ProjectsList from "@/components/ProjectsList";
-import Line from "@/components/ui/Line";
-import Welcome from "@/components/Welcome";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
-      <Welcome />
+    <main>
+      <HeroSection />
+      {/* <Welcome />
       <Line />
       <AboutMe />
       <Line />
       <PersonalPhoto />
       <Line />
-      <ProjectsList onlyFavorites />
+      <ProjectsList onlyFavorites /> */}
     </main>
   );
 }
