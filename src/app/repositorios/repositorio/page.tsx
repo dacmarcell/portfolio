@@ -58,6 +58,13 @@ export default function Page() {
             Última atualização: {formatDateTime(foundRepository.updated_at)}
           </h1>
           <h1>Data de criação: {formatDateTime(foundRepository.created_at)}</h1>
+          <a
+            target="_blank"
+            className="text-[#fffafa] bg-[#038D48] hover:bg-green-600 px-4 py-2 rounded-md transition duration-300 w-max text-lg hover:shadow-lg"
+            href={foundRepository.html_url}
+          >
+            Ir para repositório
+          </a>
         </div>
       </div>
       <div className="mt-5 p-5 bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:shadow-dark dark:text-white dark:border dark:border-gray-700 dark:divide-gray-700 divide-y divide-gray-200 ">
