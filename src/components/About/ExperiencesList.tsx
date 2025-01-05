@@ -14,7 +14,7 @@ interface Experience {
 
 const ExperiencesList: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gray-100 rounded-lg shadow-lg">
+    <div className="max-w-4xl mx-auto p-2 rounded-lg">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">
         Experiências Profissionais
       </h2>
@@ -40,6 +40,11 @@ const ExperiencesList: React.FC = () => {
                 <li key={id}>{technology}</li>
               ))}
             </ul>
+            <div className="mt-4 text-center">
+              <span className="text-gray-700 text-lg font-semibold">
+                {experience.startMonth} - {experience.endMonth}
+              </span>
+            </div>
             <div className="mt-4">
               <h4 className="text-sm font-medium text-gray-600">
                 Tecnologias:
