@@ -1,11 +1,17 @@
 "use client";
 
+import CommitsGraph from "@/components/CommitsGraph";
 import CustomLink from "@/components/ui/CustomLink";
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
 import { useEffect, useState } from "react";
 
-type Commit = {
+export type Commit = {
   sha: string;
+  commit: {
+    author: {
+      date: Date;
+    };
+  };
 };
 
 export default function Page() {
@@ -19,7 +25,8 @@ export default function Page() {
     };
 
     if (foundRepository?.commits_url) {
-      getFoundRepositoryCommits(foundRepository.commits_url).then(setCommits);
+      const endpoint = foundRepository.commits_url.replace("{/sha}", "");
+      getFoundRepositoryCommits(endpoint).then(setCommits);
     }
   }, [foundRepository]);
 
@@ -40,9 +47,7 @@ export default function Page() {
       <h1>{foundRepository.language}</h1>
       <h1>{foundRepository.topics.toString()}</h1>
       <div>
-        {commits.map((commit) => {
-          return <h1 key={commit.sha}>{commit.sha}</h1>;
-        })}
+        <CommitsGraph commits={commits} />
       </div>
       <h1>{foundRepository.created_at.toString()}</h1>
       <h1>{foundRepository.updated_at.toString()}</h1>
