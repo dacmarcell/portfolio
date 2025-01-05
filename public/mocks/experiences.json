@@ -1,0 +1,54 @@
+{
+  "experiencies": [
+    {
+      "id": 1,
+      "title": "Desenvolvedor web fullstack líder",
+      "company": "Diamantes Consultoria",
+      "startMonth": "Maio de 2024",
+      "endMonth": "Atualmente",
+      "technologies": [
+        "Programação orientada a objetos",
+        "Docker",
+        "Linux",
+        "Github",
+        "Javascript",
+        "Typescript",
+        "Node.js",
+        "Next.js",
+        "PostgreSQL",
+        "Material UI",
+        "SCSS",
+        "HTML",
+        "CSS",
+        "VPS"
+      ],
+      "description": "Desenvolvedor líder na empresa Diamantes Consultoria. Atuo no planejamento, gestão e desenvolvimento de projetos. A cada nova entrega, uma revisão de código (Code Review) é executada por mim. Em momentos de deploy, também sou o executante. Tenho experiência com deploys desde VPS com Ubuntu v22 e PM2 até em Cloud como Render utilizando AWS servers.\n● Experiência com desenvolvimento web (React.js e Next.js), criação de Cron Jobs, Web Scrapings e rotinas automatizadas com Typescript e Node.js. Em banco de dados utilizados majoritariamente o PostgreSQL, escrevendo e refinando queries quando necessário.\n● Experiência com testes unitários e end-to-end com Cypress e Jest.\n● Versionamento com GIT utilizando o Github.\n● Uso de Docker para criação e uso de containers para ambiente de desenvolvimento."
+    },
+    {
+      "id": 2,
+      "title": "Professor",
+      "company": "Infinity School",
+      "startMonth": "Fevereiro de 2024",
+      "endMonth": "Abril de 2024",
+      "description": "Planejava e liderava aulas sobre temas voltados a programação e assuntos relacionados à tecnologia. Na escola, temos como foco principal as linguagens de programação Javascript e Python.",
+      "technologies": ["HTML", "CSS", "Javascript", "Typescript", "Node.js"]
+    },
+    {
+      "id": 3,
+      "title": "Estagiário em desenvolvimento mobile",
+      "company": "GoodVibe",
+      "startMonth": "Abril de 2023",
+      "endMonth": "Agosto de 2023",
+      "description": "Aplicativo criado em React Native com foco em atendimento psicológico para pessoas necessitadas por preço social. É uma rede social com esse foco. Durante o desenvolvimento do aplicativo foi utilizado Redux Saga para gerenciamento de estado e Jest para testes unitários. No back-end, foi utilizado Node.js, Express.js e ORM Sequelize.js. Versionamento com GIT utilizando o Github Banco de dados MySQL.",
+      "technologies": [
+        "React Native",
+        "Jest",
+        "Node.js",
+        "Express.js",
+        "Sequelize.js",
+        "MySQL",
+        "Redux"
+      ]
+    }
+  ]
+}
