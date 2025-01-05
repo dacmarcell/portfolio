@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <div className="min-h-screen p-5 font-[family-name:var(--font-geist-sans)] dark:bg-slate-950">
+        <div className="min-h-screen font-[family-name:var(--font-geist-sans)] dark:bg-slate-950">
           {children}
         </div>
         <Footer />
