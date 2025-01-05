@@ -7,8 +7,8 @@ import Logo from "./Logo";
 
 export default function Header() {
   return (
-    <header className="dark:bg-gray-950 bg-green-500 text-white py-4 sticky top-0 z-50">
-      <div className="container mx-auto px-4 flex justify-around items-center">
+    <header className="dark:bg-gray-950 bg-green-500 text-white py-4 sticky top-0 z-50 px-20">
+      <div className="container mx-auto flex justify-between items-center">
         <Logo />
         <nav className="hidden md:block">
           <ul className="flex gap-x-6">
