@@ -16,7 +16,7 @@ export type Repository = {
 };
 
 interface RepositoryContextProps {
-  repositories: Repository[];
+  repositories: Array<Repository>;
   foundRepository: Repository | null;
   setID: React.Dispatch<React.SetStateAction<number | null>>;
 }
