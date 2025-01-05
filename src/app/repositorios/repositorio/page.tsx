@@ -60,7 +60,9 @@ export default function Page() {
           <h1>Data de criação: {formatDateTime(foundRepository.created_at)}</h1>
         </div>
       </div>
-      <CommitsGraph commits={commits} />
+      <div className="mt-5 p-5 bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:shadow-dark dark:text-white dark:border dark:border-gray-700 dark:divide-gray-700 divide-y divide-gray-200 ">
+        <CommitsGraph commits={commits} />
+      </div>
     </main>
   );
 }
