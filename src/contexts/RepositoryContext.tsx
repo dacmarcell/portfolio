@@ -7,7 +7,7 @@ export type Repository = {
   id: number;
   name: string;
   description: string;
-  url: string;
+  html_url: string;
   commits_url: string;
   created_at: Date;
   updated_at: Date;
