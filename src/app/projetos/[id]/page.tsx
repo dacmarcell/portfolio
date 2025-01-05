@@ -16,15 +16,15 @@ export default async function Page({
 
   if (!project) {
     return (
-      <div>
+      <main>
         <h1>Projeto não encontrado</h1>
         <Link href="/">Voltar</Link>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div>
+    <main>
       <Title>{project.title}</Title>
       <p
         className="
@@ -52,6 +52,6 @@ export default async function Page({
       >
         Voltar
       </Link>
-    </div>
+    </main>
   );
 }
