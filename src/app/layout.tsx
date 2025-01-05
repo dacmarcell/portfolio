@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import { RepositoryWrapper } from "@/contexts/RepositoryContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <div className="min-h-screen font-[family-name:var(--font-geist-sans)] dark:bg-slate-950">
-          {children}
-        </div>
+        <RepositoryWrapper>
+          <Header />
+          <div className="min-h-screen font-[family-name:var(--font-geist-sans)] dark:bg-slate-950">
+            {children}
+          </div>
+        </RepositoryWrapper>
       </body>
     </html>
   );
