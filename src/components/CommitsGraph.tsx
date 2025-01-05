@@ -26,7 +26,7 @@ export default function CommitsGraph(props: CommitsGraphProps) {
     function calculateChartData() {
       const groupedData = commits.reduce<Record<string, number>>(
         (acc, { commit }) => {
-          const date = dayjs(commit.author.date).format("YYYY-MM-DD"); // Formata a data
+          const date = dayjs(commit.author.date).format("DD/MM/YYYY"); // Formata a data
           acc[date] = (acc[date] || 0) + 1; // Incrementa o contador para o dia
           return acc;
         },
