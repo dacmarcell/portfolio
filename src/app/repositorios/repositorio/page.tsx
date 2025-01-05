@@ -35,10 +35,10 @@ export default function Page() {
 
   if (!foundRepository) {
     return (
-      <>
+      <main className="p-5">
         <CustomLink href="/repositorios">Voltar</CustomLink>
         <h1>Nenhum repositório encontrado.</h1>
-      </>
+      </main>
     );
   }
 
@@ -48,7 +48,7 @@ export default function Page() {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <h1 className="text-3xl font-bold">{foundRepository.name}</h1>
-          <h1>{foundRepository.description}</h1>
+          <h1 className="text-lg">{foundRepository.description}</h1>
           <h1>{foundRepository.topics.toString()}</h1>
         </div>
 
@@ -60,9 +60,7 @@ export default function Page() {
           <h1>Data de criação: {formatDateTime(foundRepository.created_at)}</h1>
         </div>
       </div>
-      <div className="my-5 p-20 bg-white rounded-xl shadow-lg dark:bg-gray-800">
-        <CommitsGraph commits={commits} />
-      </div>
+      <CommitsGraph commits={commits} />
     </main>
   );
 }
