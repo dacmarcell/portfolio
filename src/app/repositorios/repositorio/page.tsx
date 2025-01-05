@@ -36,8 +36,8 @@ export default function Page() {
   if (!foundRepository) {
     return (
       <>
-        <h1>Nenhum repositório encontrado.</h1>
         <CustomLink href="/repositorios">Voltar</CustomLink>
+        <h1>Nenhum repositório encontrado.</h1>
       </>
     );
   }
