@@ -12,6 +12,7 @@ interface ScreeshotBoxProps {
 }
 
 export default function ScreenshotBox({
+  error,
   isLoading,
   siteScreenshot,
   isSiteScreenshotBoxOpen,
@@ -32,7 +33,9 @@ export default function ScreenshotBox({
           }}
         />
       </div>
-      {isLoading ? (
+      {error ? (
+        <p className="text-red-500 text-xs mb-2">{error}</p>
+      ) : isLoading ? (
         <p className="text-slate-500 text-xs mb-2">Carregando...</p>
       ) : siteScreenshot ? (
         <p className="text-slate-500 text-xs mb-2">Clique para ampliar</p>
