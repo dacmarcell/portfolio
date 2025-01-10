@@ -4,7 +4,7 @@ import { GoLinkExternal } from "react-icons/go";
 
 export default function Presentation() {
   return (
-    <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] md:rounded-3xl md:mr-4 mb-10">
+    <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] dark:bg-green-600/[0.5] md:rounded-3xl md:mr-4 mb-10">
       <Biography />
       <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
         <ContractMeButton />
