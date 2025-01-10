@@ -1,13 +1,14 @@
 "use client";
 
+import dayjs from "dayjs";
+import { useEffect, useState } from "react";
+
 import CommitsGraph from "@/components/CommitsGraph";
-import Chip from "@/components/ui/Chip";
 import CustomLink from "@/components/ui/CustomLink";
 import Title from "@/components/ui/Title";
+import Chip from "@/components/ui/Chip";
+
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
-import dayjs from "dayjs";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export type Commit = {
   sha: string;
@@ -23,7 +24,6 @@ const formatDateTime = (date: Date) => dayjs(date).format("DD/MM/YYYY - HH:mm");
 export default function Page() {
   const [commits, setCommits] = useState<Array<Commit>>([]);
   const { foundRepository } = useRepositoryContext();
-  const router = useRouter();
 
   useEffect(() => {
     const getFoundRepositoryCommits = async (commitsEndpoint: string) => {
@@ -38,8 +38,16 @@ export default function Page() {
   }, [foundRepository]);
 
   if (!foundRepository) {
-    router.push("/repositorios");
-    return;
+    return (
+      <main className="flex flex-col items-center justify-center min-h-screen bg-dark">
+        <div className="mb-6">
+          <CustomLink href="/repositorios">Voltar</CustomLink>
+        </div>
+        <h1 className="text-3xl font-bold text-red-500">
+          Repositório não encontrado
+        </h1>
+      </main>
+    );
   }
 
   return (
@@ -57,10 +65,9 @@ export default function Page() {
         );
       })}
 
-      <div className="mt-5 p-5 bg-red-900 rounded-lg shadow-lg dark:bg-gray-800 dark:shadow-dark dark:text-white dark:border dark:border-gray-700 dark:divide-gray-700 divide-y divide-gray-200 flex flex-col items-center">
+      <div className="mt-5 p-5 rounded-lg dark:bg-gray-800 dark:text-white divide-y divide-gray-200 flex flex-col items-center">
         <CommitsGraph commits={commits} />
         <div className="flex flex-col items-center space-y-2 mt-5">
-          <h1 className="text-black/[0.4]">{foundRepository.id}</h1>
           <h1>
             Última atualização: {formatDateTime(foundRepository.updated_at)}
           </h1>
