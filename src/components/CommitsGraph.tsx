@@ -45,7 +45,10 @@ export default function CommitsGraph(props: CommitsGraphProps) {
   }, [commits]);
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer
+      className={"bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl"}
+      height={300}
+    >
       <LineChart
         data={chartData}
         margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
