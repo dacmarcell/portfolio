@@ -4,7 +4,7 @@ import { GoLinkExternal } from "react-icons/go";
 
 export default function Presentation() {
   return (
-    <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] dark:bg-green-600/[0.5] md:rounded-3xl md:mr-4 mb-10">
+    <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] dark:bg-white md:rounded-3xl md:mr-4">
       <Biography />
       <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
         <ContractMeButton />
@@ -17,8 +17,10 @@ export default function Presentation() {
 function Biography() {
   return (
     <>
-      <h1 className="text-6xl font-bold">Olá! Me chamo Marcell.</h1>
-      <h2 className="text-2xl font-semibold">
+      <h1 className="text-6xl font-bold dark:text-black">
+        Olá! Me chamo Marcell.
+      </h1>
+      <h2 className="text-2xl font-semibold dark:text-black">
         Desenvolvendo software de qualidade como desenvolvedor web fullstack
       </h2>
     </>
@@ -41,7 +43,7 @@ function ProjectsLink() {
   return (
     <Link
       href="/projetos"
-      className="flex flex-row hover:underline items-center"
+      className="flex flex-row hover:underline items-center dark:text-black"
     >
       <span>Projetos</span>
       <GoLinkExternal className="ml-1" />
