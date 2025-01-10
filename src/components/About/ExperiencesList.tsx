@@ -1,4 +1,6 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 import json from "../../../public/mocks/experiences.json";
 
@@ -29,7 +31,9 @@ const ExperiencesList: React.FC = () => {
                 {experience.title}
               </h3>
               <span className="text-sm text-gray-500">
-                {experience.description}
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                  {experience.description}
+                </ReactMarkdown>
               </span>
             </div>
             <p className="text-gray-700 mt-2">
