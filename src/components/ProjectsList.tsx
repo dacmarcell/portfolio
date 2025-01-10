@@ -26,10 +26,11 @@ export default function ProjectsList(props: ProjectsListProps) {
           return (
             <Card
               isProject
-              id={project.id.toString()}
               key={project.id}
               title={project.title}
+              id={project.id.toString()}
               description={project.description}
+              technologies={project.technologies}
             />
           );
         })}
