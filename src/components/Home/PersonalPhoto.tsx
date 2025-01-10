@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PersonalPhoto() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center bg-white md:bg-transparent">
       <Image
         width={500}
         height={500}
