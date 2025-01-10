@@ -1,6 +1,7 @@
 "use client";
 
 import CommitsGraph from "@/components/CommitsGraph";
+import Chip from "@/components/ui/Chip";
 import CustomLink from "@/components/ui/CustomLink";
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
 import dayjs from "dayjs";
@@ -49,7 +50,13 @@ export default function Page() {
         <div>
           <h1 className="text-3xl font-bold">{foundRepository.name}</h1>
           <h1 className="text-lg">{foundRepository.description}</h1>
-          <h1>{foundRepository.topics.toString()}</h1>
+          {foundRepository.topics.map((topic) => {
+            return (
+              <div key={topic} className="inline-block m-2">
+                <Chip element={topic} />
+              </div>
+            );
+          })}
         </div>
 
         <div className="flex flex-col items-end space-y-2">
