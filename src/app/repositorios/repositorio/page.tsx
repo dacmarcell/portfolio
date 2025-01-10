@@ -3,8 +3,10 @@
 import CommitsGraph from "@/components/CommitsGraph";
 import Chip from "@/components/ui/Chip";
 import CustomLink from "@/components/ui/CustomLink";
+import Title from "@/components/ui/Title";
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
 import dayjs from "dayjs";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export type Commit = {
@@ -21,6 +23,7 @@ const formatDateTime = (date: Date) => dayjs(date).format("DD/MM/YYYY - HH:mm");
 export default function Page() {
   const [commits, setCommits] = useState<Array<Commit>>([]);
   const { foundRepository } = useRepositoryContext();
+  const router = useRouter();
 
   useEffect(() => {
     const getFoundRepositoryCommits = async (commitsEndpoint: string) => {
@@ -35,31 +38,28 @@ export default function Page() {
   }, [foundRepository]);
 
   if (!foundRepository) {
-    return (
-      <main className="p-5">
-        <CustomLink href="/repositorios">Voltar</CustomLink>
-        <h1>Nenhum repositório encontrado.</h1>
-      </main>
-    );
+    router.push("/repositorios");
+    return;
   }
 
   return (
     <main className="p-5">
-      <CustomLink href="/repositorios">Voltar</CustomLink>
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div>
-          <h1 className="text-3xl font-bold">{foundRepository.name}</h1>
-          <h1 className="text-lg">{foundRepository.description}</h1>
-          {foundRepository.topics.map((topic) => {
-            return (
-              <div key={topic} className="inline-block m-2">
-                <Chip element={topic} />
-              </div>
-            );
-          })}
-        </div>
+      <div className="flex justify-between items-center mb-6">
+        <Title>{foundRepository.name}</Title>
+        <CustomLink href="/repositorios">Voltar</CustomLink>
+      </div>
+      <h1>{foundRepository.description}</h1>
+      {foundRepository.topics.map((topic) => {
+        return (
+          <div key={topic} className="inline-block m-2">
+            <Chip element={topic} />
+          </div>
+        );
+      })}
 
-        <div className="flex flex-col items-end space-y-2">
+      <div className="mt-5 p-5 bg-red-900 rounded-lg shadow-lg dark:bg-gray-800 dark:shadow-dark dark:text-white dark:border dark:border-gray-700 dark:divide-gray-700 divide-y divide-gray-200 flex flex-col items-center">
+        <CommitsGraph commits={commits} />
+        <div className="flex flex-col items-center space-y-2 mt-5">
           <h1 className="text-black/[0.4]">{foundRepository.id}</h1>
           <h1>
             Última atualização: {formatDateTime(foundRepository.updated_at)}
@@ -73,9 +73,6 @@ export default function Page() {
             Ir para repositório
           </a>
         </div>
-      </div>
-      <div className="mt-5 p-5 bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:shadow-dark dark:text-white dark:border dark:border-gray-700 dark:divide-gray-700 divide-y divide-gray-200 ">
-        <CommitsGraph commits={commits} />
       </div>
     </main>
   );
