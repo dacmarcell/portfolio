@@ -38,13 +38,6 @@ const PreviewButton = ({ project }: PreviewButtonProps) => {
     }
   };
 
-  const handleOpenSiteScreenshotBox = async () => {
-    if (isSiteScreenshotBoxOpen) return;
-
-    setIsSiteScreenshotBoxOpen(true);
-    await fetchPreviewData();
-  };
-
   const handleMouseEnter = async () => {
     if (!isSiteScreenshotBoxOpen) {
       setIsSiteScreenshotBoxOpen(true);
