@@ -4,17 +4,20 @@ import { useRouter } from "next/navigation";
 import Button from "./ui/Button";
 import ArrowIcon from "./ui/ArrowIcon";
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
+import Chip from "./ui/Chip";
 
 interface CardProps {
   title: string;
   description: string;
   id: string;
+  technologies: string[];
   isProject?: boolean;
   isRepository?: boolean;
 }
 
 export default function Card(props: CardProps) {
-  const { description, title, id, isProject, isRepository } = props;
+  const { description, title, id, isProject, isRepository, technologies } =
+    props;
 
   const router = useRouter();
   const { setID } = useRepositoryContext();
@@ -44,6 +47,13 @@ export default function Card(props: CardProps) {
         Saiba mais
         <ArrowIcon />
       </Button>
+      {technologies.length > 0 ? (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {technologies.map((technology) => (
+            <Chip key={technology} element={technology} />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
