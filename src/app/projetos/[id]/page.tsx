@@ -29,9 +29,11 @@ export default async function Page({
 
   return (
     <main className="p-5 flex flex-col items-center">
-      <CustomLink href="/projetos">Voltar</CustomLink>
       <div className="bg-dark text-foreground rounded-lg shadow-lg p-6 w-full max-w-4xl">
-        <Title>{project.title}</Title>
+        <div className="flex justify-between items-center mb-6">
+          <Title>{project.title}</Title>
+          <CustomLink href="/projetos">Voltar</CustomLink>
+        </div>
         <p className="text-lg text-center text-gray-400 mb-6">
           {project.description}
         </p>
