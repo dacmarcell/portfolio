@@ -15,7 +15,7 @@ interface Experience {
 const ExperiencesList: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto p-2 rounded-lg">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 ">
         Experiências Profissionais
       </h2>
       <div className="space-y-6">
