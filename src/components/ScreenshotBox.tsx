@@ -18,8 +18,8 @@ export default function ScreenshotBox({
   setIsSiteScreenshotBoxOpen,
 }: ScreeshotBoxProps) {
   return (
-    <div className="absolute left-0 top-12 w-80 p-4 bg-white border rounded shadow-lg">
-      <div className="flex justify-end items-center mb-4">
+    <div className="absolute left-0 top-12 w-80 p-4 bg-white rounded shadow-lg">
+      <div className="flex justify-between items-center mb-2">
         <p className="text-slate-500 text-center text-xs mr-2">
           Preview do site que você irá acessar
         </p>
@@ -33,17 +33,17 @@ export default function ScreenshotBox({
         />
       </div>
       {isLoading ? (
-        <p className="text-center text-sm text-gray-400">Carregando...</p>
+        <p className="text-slate-500 text-xs mb-2">Carregando...</p>
       ) : siteScreenshot ? (
-        <p className="text-center text-sm text-gray-400">Clique para ampliar</p>
+        <p className="text-slate-500 text-xs mb-2">Clique para ampliar</p>
       ) : null}
       {siteScreenshot ? (
-        <Zoom canSwipeToUnzoom zoomMargin={20}>
+        <Zoom canSwipeToUnzoom zoomMargin={30}>
           <Image
             width={600}
             height={600}
-            alt="Website Preview"
             src={siteScreenshot}
+            alt="Website Preview"
             className="w-full h-auto rounded"
           />
         </Zoom>
