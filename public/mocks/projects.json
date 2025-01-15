@@ -21,7 +21,7 @@
       "title": "CryptoGuardian",
       "description": "API desenvolvida com o intuito de facilitar transações com moedas físicas para moedas digitais, especificamente Ethereum. Basta passar o valor mínimo e máximo que você tem disponível para fazer a transação e a API vai validar a transação como true (possível de ser feita) e false (impossível de ser feita). É uma API de validação. O projeto foi desenvolvido com Node.js.",
       "url": "https://github.com/dacmarcell/cryptoguardian",
-      "isFavorite": true,
+      "isFavorite": false,
       "technologies": ["Node.js"]
     },
     {
@@ -53,6 +53,14 @@
         "SQL Server",
         "Docker"
       ]
+    },
+    {
+      "id": 7,
+      "title": "carbonFootprintCalculator",
+      "description": "Uma API que calcula emissões de carbono baseada em consumo, dieta e meio de transporte do usuário",
+      "url": "https://github.com/dacmarcell/carbonFootprintCalculator",
+      "isFavorite": true,
+      "technologies": ["PHP", "Laravel", "PostgreSQL"]
     }
   ]
 }
