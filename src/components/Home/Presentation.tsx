@@ -7,7 +7,7 @@ export default function Presentation() {
       <Biography />
       <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
         <ContractMeButton />
-        <CustomExternalLink href="/projetos" />
+        <CustomExternalLink href="/projetos">Ver projetos</CustomExternalLink>
       </div>
     </div>
   );
