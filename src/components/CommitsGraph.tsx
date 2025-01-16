@@ -10,6 +10,7 @@ import {
   YAxis,
   Line,
 } from "recharts";
+import Title from "./ui/Title";
 
 interface CommitsGraphProps {
   commits: Array<Commit>;
@@ -45,20 +46,23 @@ export default function CommitsGraph(props: CommitsGraphProps) {
   }, [commits]);
 
   return (
-    <ResponsiveContainer
-      className={"bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl"}
-      height={300}
-    >
-      <LineChart
-        data={chartData}
-        margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+    <>
+      <Title>Contagem de commits</Title>
+      <ResponsiveContainer
+        className={"bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl"}
+        height={300}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="count" stroke="#8884d8" />
-      </LineChart>
-    </ResponsiveContainer>
+        <LineChart
+          data={chartData}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="count" stroke="#8884d8" />
+        </LineChart>
+      </ResponsiveContainer>
+    </>
   );
 }
