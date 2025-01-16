@@ -8,24 +8,24 @@ export default function SocialIcons() {
     <div className="flex gap-x-4">
       <a
         href={personalConfig.social_links.github}
-        target="_blank"
         rel="noopener noreferrer"
+        target="_blank"
       >
-        <FaGithub className="dark:text-white text-black hover:text-green-800" />
+        <FaGithub className="text-white hover:text-green-800" />
       </a>
       <a
         href={personalConfig.social_links.linkedin}
-        target="_blank"
         rel="noopener noreferrer"
+        target="_blank"
       >
-        <FaLinkedin className="dark:text-white text-black hover:text-green-800" />
+        <FaLinkedin className="text-white hover:text-green-800" />
       </a>
       <a
         href={personalConfig.social_links.email}
-        target="_blank"
         rel="noopener noreferrer"
+        target="_blank"
       >
-        <MdEmail className="dark:text-white text-black hover:text-green-800" />
+        <MdEmail className="text-white hover:text-green-800" />
       </a>
     </div>
   );

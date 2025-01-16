@@ -5,10 +5,7 @@ export default function NavigationLinks() {
   return json.navigation.map((item) => {
     return (
       <li key={item.id}>
-        <Link
-          href={item.endpoint}
-          className="hover:text-green-800 text-black dark:text-white"
-        >
+        <Link href={item.endpoint} className="hover:text-green-800 text-white">
           {item.formattedName}
         </Link>
       </li>
