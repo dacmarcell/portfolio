@@ -2,6 +2,7 @@ import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import Spinner from "./ui/Spinner";
 
 interface ScreeshotBoxProps {
   error: string;
@@ -27,16 +28,16 @@ export default function ScreenshotBox({
         <IoMdClose
           className="top-2 text-2xl cursor-pointer text-black left-40"
           onClick={() => {
-            if (isSiteScreenshotBoxOpen) {
-              setIsSiteScreenshotBoxOpen(false);
-            }
+            if (isSiteScreenshotBoxOpen) setIsSiteScreenshotBoxOpen(false);
           }}
         />
       </div>
       {error ? (
         <p className="text-red-500 text-xs mb-2">{error}</p>
       ) : isLoading ? (
-        <p className="text-slate-500 text-xs mb-2">Carregando...</p>
+        <p className="text-slate-500 text-xs mb-2">
+          <Spinner />
+        </p>
       ) : siteScreenshot ? (
         <p className="text-slate-500 text-xs mb-2">Clique para ampliar</p>
       ) : null}
