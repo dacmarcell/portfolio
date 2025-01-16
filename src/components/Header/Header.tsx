@@ -6,7 +6,7 @@ import personalConfig from "@/utils/personalConfig";
 
 export default function Header() {
   return (
-    <header className="dark:bg-gray-950 bg-green-100 text-white py-4 sticky top-0 z-50 w-full">
+    <header className="dark:bg-gray-950 bg-green-100 text-white py-4 sticky top-0 z-50 w-full px-5">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <Logo />
         <nav>
