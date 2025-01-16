@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./Logo";
 import NavigationLinks from "./NavigationLinks";
 import SocialIcons from "./SocialIcons";
@@ -10,6 +11,15 @@ export default function Header() {
         <nav>
           <ul className="flex gap-x-6">
             <NavigationLinks />
+            <li>
+              <Link
+                href="https://marcellus38.gumroad.com/"
+                className="hover:text-green-800 hover:underline text-black dark:text-white"
+                target="_blank"
+              >
+                Loja
+              </Link>
+            </li>
           </ul>
         </nav>
         <div>
