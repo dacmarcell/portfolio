@@ -2,6 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import NavigationLinks from "./NavigationLinks";
 import SocialIcons from "./SocialIcons";
+import personalConfig from "@/utils/personalConfig";
 
 export default function Header() {
   return (
@@ -13,7 +14,7 @@ export default function Header() {
             <NavigationLinks />
             <li>
               <Link
-                href="https://marcellus38.gumroad.com/"
+                href={personalConfig.gumroad}
                 className="hover:text-green-800 hover:underline text-black dark:text-white"
                 target="_blank"
               >
