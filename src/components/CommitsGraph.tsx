@@ -49,7 +49,7 @@ export default function CommitsGraph(props: CommitsGraphProps) {
     <>
       <Title>Contagem de commits</Title>
       <ResponsiveContainer
-        className={"bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl"}
+        className="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl"
         height={300}
       >
         <LineChart
