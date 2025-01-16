@@ -19,7 +19,7 @@ export default function ScreenshotBox({
   setIsSiteScreenshotBoxOpen,
 }: ScreeshotBoxProps) {
   return (
-    <div className="absolute left-0 top-12 w-80 p-4 bg-white rounded shadow-lg">
+    <div className="left-0 top-12 w-80 p-4 bg-white rounded shadow-lg absolute z-10">
       <div className="flex justify-between items-center mb-2">
         <p className="text-slate-500 text-center text-xs mr-2">
           Preview do site que você irá acessar
