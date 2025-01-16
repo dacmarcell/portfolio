@@ -1,6 +1,5 @@
 import personalConfig from "@/utils/personalConfig";
-import Link from "next/link";
-import { GoLinkExternal } from "react-icons/go";
+import { CustomExternalLink } from "../ui/CustomExternalLink";
 
 export default function Presentation() {
   return (
@@ -8,7 +7,7 @@ export default function Presentation() {
       <Biography />
       <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
         <ContractMeButton />
-        <ProjectsLink />
+        <CustomExternalLink href="/projetos" />
       </div>
     </div>
   );
@@ -36,17 +35,5 @@ function ContractMeButton() {
     >
       Me contrate
     </a>
-  );
-}
-
-function ProjectsLink() {
-  return (
-    <Link
-      href="/projetos"
-      className="flex flex-row hover:underline items-center dark:text-black"
-    >
-      <span>Projetos</span>
-      <GoLinkExternal className="ml-1" />
-    </Link>
   );
 }
