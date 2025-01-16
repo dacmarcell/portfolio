@@ -1,5 +1,9 @@
+"use client";
+
 import personalConfig from "@/utils/personalConfig";
 import { CustomExternalLink } from "../ui/CustomExternalLink";
+
+import FadeIn from "../motion/FadeIn";
 
 export default function Presentation() {
   return (
@@ -15,25 +19,27 @@ export default function Presentation() {
 
 function Biography() {
   return (
-    <>
+    <FadeIn>
       <h1 className="text-6xl font-bold dark:text-black">
         Olá! Me chamo Marcell.
       </h1>
       <h2 className="text-2xl font-semibold dark:text-black">
         Desenvolvendo software de qualidade como desenvolvedor web fullstack
       </h2>
-    </>
+    </FadeIn>
   );
 }
 
 function ContractMeButton() {
   return (
-    <a
-      target="_blank"
-      href={personalConfig.social_links.linkedin}
-      className="text-[#fffafa] bg-[#038D48] hover:bg-green-600 px-4 py-2 mr-2 mb-2 rounded-md transition duration-300 w-max text-lg hover:shadow-lg"
-    >
-      Me contrate
-    </a>
+    <FadeIn>
+      <a
+        target="_blank"
+        href={personalConfig.social_links.linkedin}
+        className="text-[#fffafa] bg-[#038D48] hover:bg-green-600 px-4 py-2 mr-2 mb-2 rounded-md transition duration-300 w-max text-lg hover:shadow-lg"
+      >
+        Me contrate
+      </a>
+    </FadeIn>
   );
 }

@@ -1,9 +1,12 @@
-import { useMemo } from "react";
+"use client";
+
+import { useMemo, useState } from "react";
 import json from "../../public/mocks/projects.json";
 import Card from "./Card";
 import Title from "./ui/Title";
 import shuffle from "@/utils/shuffle";
 import CustomLink from "./ui/CustomLink";
+import FadeIn from "./motion/FadeIn";
 
 interface ProjectsListProps {
   onlyFavorites?: boolean;
@@ -20,18 +23,21 @@ export default function ProjectsList(props: ProjectsListProps) {
 
   return (
     <div>
-      <Title>Projetos</Title>
+      <FadeIn>
+        <Title>Projetos</Title>
+      </FadeIn>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {shuffle(filteredProjects).map((project) => {
+        {filteredProjects.map((project) => {
           return (
-            <Card
-              isProject
-              key={project.id}
-              title={project.title}
-              id={project.id.toString()}
-              description={project.description}
-              technologies={project.technologies}
-            />
+            <FadeIn key={project.id}>
+              <Card
+                isProject
+                title={project.title}
+                id={project.id.toString()}
+                description={project.description}
+                technologies={project.technologies}
+              />
+            </FadeIn>
           );
         })}
         {onlyFavorites ? (

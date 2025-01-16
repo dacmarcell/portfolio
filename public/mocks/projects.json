@@ -1,6 +1,37 @@
 {
   "projects": [
     {
+      "id": 7,
+      "title": "Calculadora de pegada de carbono",
+      "description": "Uma API que calcula emissões de carbono baseada em consumo, dieta e meio de transporte do usuário",
+      "url": "https://github.com/dacmarcell/carbonFootprintCalculator",
+      "isFavorite": true,
+      "technologies": ["PHP", "Laravel", "PostgreSQL"]
+    },
+    {
+      "id": 5,
+      "title": "IdeaPlanAI",
+      "description": "Um analisador de projetos que utiliza IA para calcular os requisitos funcionais, não funcionais, estimativa de tempo, tecnologias recomendadas e desafios em potencial a partir do projeto proposto. O projeto foi desenvolvido com Node.js, Typescript, Docker e uma versão standalone do modelo nemotron da LLM llama3 para gerar as respostas.",
+      "url": "https://github.com/dacmarcell/IdeaPlanAI",
+      "isFavorite": false,
+      "technologies": ["Node.js", "Typescript", "Docker"]
+    },
+    {
+      "id": 6,
+      "title": "DevStackAPI",
+      "description": "Uma API para gerenciar dados de perfis de portfólios de desenvolvedores de software. Permite customizar individualmente por perfil. O projeto foi desenvolvido com C#, ASP.NET CORE 8, Entity Framework, SQL Server e Docker.",
+      "url": "https://github.com/dacmarcell/DevStackAPI",
+      "isFavorite": true,
+      "technologies": [
+        "C#",
+        "ASP.NET CORE 8",
+        "Entity Framework",
+        "SQL Server",
+        "Docker"
+      ]
+    },
+
+    {
       "id": 1,
       "title": "Barro Neles",
       "description": "Site destinado a uma campanha política para vereador de uma cidade no interior da Bahia. O site foi desenvolvido com React e SCSS. O site é responsivo e interativo, com um design moderno e atraente. O site possui uma área de denúncias, uma área de propostas e uma página de contato direto com o candidato.",
@@ -31,36 +62,6 @@
       "url": "https://github.com/dacmarcell/gamerave",
       "isFavorite": false,
       "technologies": ["Node.js", "TypeORM", "PostgreSQL", "Docker"]
-    },
-    {
-      "id": 5,
-      "title": "IdeaPlanAI",
-      "description": "Um analisador de projetos que utiliza IA para calcular os requisitos funcionais, não funcionais, estimativa de tempo, tecnologias recomendadas e desafios em potencial a partir do projeto proposto. O projeto foi desenvolvido com Node.js, Typescript, Docker e uma versão standalone do modelo nemotron da LLM llama3 para gerar as respostas.",
-      "url": "https://github.com/dacmarcell/IdeaPlanAI",
-      "isFavorite": false,
-      "technologies": ["Node.js", "Typescript", "Docker"]
-    },
-    {
-      "id": 6,
-      "title": "DevStackAPI",
-      "description": "Uma API para gerenciar dados de perfis de portfólios de desenvolvedores de software. Permite customizar individualmente por perfil. O projeto foi desenvolvido com C#, ASP.NET CORE 8, Entity Framework, SQL Server e Docker.",
-      "url": "https://github.com/dacmarcell/DevStackAPI",
-      "isFavorite": true,
-      "technologies": [
-        "C#",
-        "ASP.NET CORE 8",
-        "Entity Framework",
-        "SQL Server",
-        "Docker"
-      ]
-    },
-    {
-      "id": 7,
-      "title": "carbonFootprintCalculator",
-      "description": "Uma API que calcula emissões de carbono baseada em consumo, dieta e meio de transporte do usuário",
-      "url": "https://github.com/dacmarcell/carbonFootprintCalculator",
-      "isFavorite": true,
-      "technologies": ["PHP", "Laravel", "PostgreSQL"]
     }
   ]
 }
