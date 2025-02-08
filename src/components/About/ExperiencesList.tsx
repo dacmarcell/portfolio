@@ -45,11 +45,6 @@ const ExperiencesList: React.FC = () => {
               <p className="text-gray-700 mt-2">
                 <strong>{experience.company}</strong>
               </p>
-              <ul className="mt-3 text-gray-600 list-disc list-inside space-y-2">
-                {experience.technologies.map((technology, id) => (
-                  <li key={id}>{technology}</li>
-                ))}
-              </ul>
               <div className="mt-4 text-center">
                 <span className="text-gray-700 text-lg font-semibold">
                   {experience.startMonth} - {experience.endMonth}
