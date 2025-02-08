@@ -35,10 +35,9 @@ export default async function ReposList() {
     return (
       <Card
         isRepository
-        technologies={[]}
-        id={repo.id.toString()}
         key={repo.id}
         title={repo.name}
+        id={repo.id.toString()}
         description={repo.description}
       />
     );
