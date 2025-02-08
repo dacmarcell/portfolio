@@ -65,11 +65,11 @@ export default function Page() {
 
         <FadeIn className="md:col-span-1 text-lg text-start">
           <p className="mt-4 md:mt-0">
-            <b>3° lugar no hackathon SemComp 2024</b>
+            <b>3° lugar no hackathon SemComp UFBA 2024</b>
             <br />
-            Foi uma grande honra participar do Hackathon SEMCOMP 2024. Por lá
-            desenvolvemos uma solução que leva tecnologia e informação para as
-            comunidades marginalizadas.
+            Foi uma grande honra participar do Hackathon SEMCOMP UFBA 2024. Por
+            lá desenvolvemos uma solução que leva tecnologia e informação para
+            as comunidades marginalizadas.
             <br />
             Arquitetura idealizada por mim visando foco em públicos
             marginalizados com dificuldade de acesso à internet.
