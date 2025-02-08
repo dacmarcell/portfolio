@@ -1,6 +1,24 @@
 {
   "experiencies": [
     {
+      "id": 4,
+      "title": "Desenvolvedor fullstack júnior",
+      "company": "Softpar",
+      "startMonth": "Janeiro de 2025",
+      "endMonth": "Atualmente",
+      "technologies": [
+        "PHP",
+        "PostgreSQL",
+        "SQL",
+        "Laravel",
+        "Quasar framework",
+        "Vue.js",
+        "Amazon Web Services (AWS)",
+        "Scrum"
+      ],
+      "description": "Desenvolvimento de aplicações utilizando o framework Laravel no back-end e Quasar (Vue.js) no front-end, com experiência prática na metodologia ágil Scrum.\nExperiência em deploy com AWS.Desenvolvimento"
+    },
+    {
       "id": 1,
       "title": "Desenvolvedor web fullstack líder",
       "company": "Diamantes Consultoria",
@@ -22,7 +40,7 @@
         "CSS",
         "VPS"
       ],
-      "description": "Desenvolvedor líder na empresa **Diamantes Consultoria**.\nAtuo no planejamento, gestão e desenvolvimento de projetos. A cada nova entrega, uma revisão de código (Code Review) é executada por mim. Em momentos de deploy, também sou o executante. Tenho experiência com deploys desde **VPS com Ubuntu v22 e PM2** até em Cloud como Render utilizando **AWS servers**.\n### **Experiências**\n - Desenvolvimento web com **React.js** e **Next.js**, criação de **Cron Jobs**, **Web Scrapings** e rotinas automatizadas com **Typescript** e **Node.js**.\n- Bancos de dados: **PostgreSQL**, com refinamento de queries quando necessário.\n- Testes unitários e end-to-end com **Cypress** e **Jest**.\n- Versionamento com **Git**, utilizando o **Github**.\n- Uso de **Docker** para criação e uso de containers em ambiente de desenvolvimento."
+      "description": "Desenvolvedor líder na Diamantes Consultoria, responsável por planejar, gerenciar e implementar projetos de desenvolvimento. Supervisiona e realiza revisões de código após cada entrega, garantindo a excelência técnica e a aderência às melhores práticas. Durante os momentos de deploy, executa e monitora o processo de ponta a ponta.\nPossui ampla experiência com deploys em VPS utilizando Ubuntu 22 e PM2, bem como em ambientes de Cloud como Render e servidores AWS.\nDesenvolveu e otimizou aplicações web utilizando React.js e Next.js, além de automatizar rotinas e criar Cron Jobs e Web Scrapings empregando TypeScript e Node.js. Avaliou e refinou queries em PostgreSQL para maximizar a eficiência dos sistemas.\nTestou e validou aplicações com ferramentas como Cypress e Jest, promovendo qualidade e robustez nas entregas. Utiliza Docker para configuração de containers e gestão de ambientes de desenvolvimento, além de versionar projetos com GIT no GitHub"
     },
     {
       "id": 2,
