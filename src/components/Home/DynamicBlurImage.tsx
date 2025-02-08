@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { dynamicBlurDataUrl } from "@/utils/dynamicBlurDataUrl";
 import { useEffect, useState } from "react";
