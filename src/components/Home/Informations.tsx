@@ -8,7 +8,7 @@ const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
 
 export default function Informations() {
   return (
-    <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] dark:bg-white md:rounded-3xl  w-full md:w-80 md:mr-4 md:mt-10">
+    <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] dark:bg-white md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10">
       <FadeIn>
         <h1 className="font-semibold text-xl dark:text-black">Contato</h1>
       </FadeIn>
