@@ -11,7 +11,7 @@ interface CardProps {
   title: string;
   description: string;
   id: string;
-  technologies: string[];
+  technologies?: string[];
   isProject?: boolean;
   isRepository?: boolean;
 }
@@ -52,7 +52,7 @@ export default function Card(props: CardProps) {
           <ArrowIcon />
         </Button>
       </FadeIn>
-      {technologies.length > 0 ? (
+      {technologies && technologies.length > 0 ? (
         <div className="flex flex-wrap gap-2 mt-4">
           {technologies.map((technology) => (
             <FadeIn key={technology}>
