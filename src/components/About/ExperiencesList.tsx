@@ -17,33 +17,45 @@ const ExperiencesList = () => {
         {experiencies.map((experience: (typeof experiencies)[number]) => (
           <div
             key={experience.id}
-            className="border border-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            className="relative group border border-gray-700 p-6 rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
           >
+            {/* Overlay com brilho ao passar o mouse */}
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent to-gray-900 opacity-30 rounded-xl transition-opacity group-hover:opacity-40"></div>
+
             <FadeIn>
-              <div className="flex justify-between items-center mb-10">
-                <h3 className="mr-10 text-xl font-semibold">
+              {/* Título e Empresa */}
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-xl font-bold text-white">
                   {experience.title}
                 </h3>
-                <ReactMarkdown
-                  rehypePlugins={[rehypeRaw]}
-                  className="text-sm text-gray-500"
-                >
-                  {experience.description}
-                </ReactMarkdown>
+                <span className="text-sm font-medium text-gray-400 bg-gray-800 px-3 py-1 rounded-lg">
+                  {experience.startMonth} - {experience.endMonth}
+                </span>
               </div>
-              <b className="text-gray-700 mt-5 mr-5">{experience.company}</b>
-              <span className="mt-4 text-center text-gray-700 text-lg font-semibold">
-                {experience.startMonth} - {experience.endMonth}
-              </span>
-              <div className="mt-4">
-                <h4 className="text-sm font-medium text-gray-600">
+
+              {/* Descrição da Experiência */}
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                className="text-gray-300"
+              >
+                {experience.description}
+              </ReactMarkdown>
+
+              {/* Empresa */}
+              <div className="mt-5">
+                <b className="text-lg text-green-400">{experience.company}</b>
+              </div>
+
+              {/* Tecnologias Utilizadas */}
+              <div className="mt-5">
+                <h4 className="text-sm font-semibold text-gray-400">
                   Tecnologias:
                 </h4>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {experience.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="text-xs bg-gray-200 text-gray-800 py-1 px-2 rounded-lg"
+                      className="text-xs font-semibold bg-gray-700 text-white px-3 py-1 rounded-full shadow-md transition transform hover:scale-105"
                     >
                       {tech}
                     </span>
