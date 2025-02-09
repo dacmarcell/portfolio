@@ -6,7 +6,7 @@ import { projects } from "../../../public/mocks/projects.json";
 export default function Page() {
   return (
     <main className="p-10">
-      <Title className="text-white">Projetos</Title>
+      <Title>Projetos</Title>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => {
           return (
