@@ -9,6 +9,7 @@ import Title from "@/components/ui/Title";
 import Chip from "@/components/ui/Chip";
 
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
+import { BsArrowLeft } from "react-icons/bs";
 
 export type Commit = {
   sha: string;
@@ -39,47 +40,73 @@ export default function Page() {
 
   if (!foundRepository) {
     return (
-      <main className="flex flex-col items-center justify-center min-h-screen bg-dark">
+      <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="mb-6">
-          <CustomLink href="/repositorios">Voltar</CustomLink>
+          <CustomLink href="/repositorios">
+            <BsArrowLeft className="w-5 h-5 mr-2" /> Voltar
+          </CustomLink>
         </div>
-        <h1 className="text-3xl font-bold text-red-500">
-          Repositório não encontrado
+        <h1 className="text-4xl font-bold text-red-400 animate-pulse">
+          🚨 Repositório não encontrado
         </h1>
       </main>
     );
   }
 
   return (
-    <main className="p-5">
-      <div className="flex justify-between items-center mb-6">
+    <main className="p-8 md:p-16 bg-gradient-to-b from-gray-900 to-black min-h-screen text-white">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-gray-700 pb-6">
         <Title>{foundRepository.name}</Title>
-        <CustomLink href="/repositorios">Voltar</CustomLink>
+        <CustomLink href="/repositorios">
+          <BsArrowLeft className="w-5 h-5 mr-2" /> Voltar
+        </CustomLink>
       </div>
-      <h1>{foundRepository.description}</h1>
-      {foundRepository.topics.map((topic) => {
-        return (
-          <div key={topic} className="inline-block m-2">
-            <Chip element={topic} />
-          </div>
-        );
-      })}
 
-      <div className="mt-5 p-5 rounded-lg dark:bg-gray-800 divide-y divide-gray-200 flex flex-col items-center">
+      {/* Descrição do Repositório */}
+      <div className="mb-6 p-6 rounded-lg bg-gray-800/50 border border-gray-700 shadow-lg">
+        <h2 className="text-xl font-semibold text-gray-200">📌 Descrição:</h2>
+        <p className="mt-2 text-lg text-gray-300">
+          {foundRepository.description}
+        </p>
+      </div>
+
+      {/* Tópicos */}
+      <div className="flex flex-wrap gap-3 mb-8">
+        {foundRepository.topics.map((topic) => (
+          <Chip key={topic} element={topic} />
+        ))}
+      </div>
+
+      {/* Gráfico de Commits */}
+      <div className="p-6 bg-gray-800/50 border border-gray-700 rounded-lg shadow-lg">
+        <h2 className="text-xl font-semibold text-gray-200 mb-4">
+          📊 Histórico de Commits
+        </h2>
         <CommitsGraph commits={commits} />
-        <div className="flex flex-col items-center space-y-2 mt-5">
-          <h1>
-            Última atualização: {formatDateTime(foundRepository.updated_at)}
-          </h1>
-          <h1>Data de criação: {formatDateTime(foundRepository.created_at)}</h1>
-          <a
-            target="_blank"
-            className="text-[#fffafa] bg-[#038D48] hover:bg-green-600 px-4 py-2 rounded-md transition duration-300 w-max text-lg hover:shadow-lg"
-            href={foundRepository.html_url}
-          >
-            Ir para repositório
-          </a>
-        </div>
+      </div>
+
+      {/* Datas e Link do Repositório */}
+      <div className="mt-8 p-6 rounded-lg bg-gray-800/50 border border-gray-700 shadow-lg flex flex-col items-center text-center">
+        <h1 className="text-lg text-gray-300">
+          ⏳ Última atualização:{" "}
+          <span className="font-semibold text-white">
+            {formatDateTime(foundRepository.updated_at)}
+          </span>
+        </h1>
+        <h1 className="text-lg text-gray-300 mt-2">
+          🛠️ Criado em:{" "}
+          <span className="font-semibold text-white">
+            {formatDateTime(foundRepository.created_at)}
+          </span>
+        </h1>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={foundRepository.html_url}
+          className="mt-6 text-lg bg-green-600 hover:bg-green-500 px-6 py-3 rounded-md transition duration-300 shadow-md hover:shadow-lg text-white font-semibold"
+        >
+          🚀 Ir para repositório
+        </a>
       </div>
     </main>
   );
