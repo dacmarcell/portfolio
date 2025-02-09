@@ -58,9 +58,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Barra de destaque no mobile */}
-          <div className="md:hidden w-full h-10 bg-green-600 mt-4 rounded-lg shadow-md" />
-
           {/* Contato */}
           <div className="flex flex-col justify-center p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-white bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
