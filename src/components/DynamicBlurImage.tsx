@@ -32,7 +32,7 @@ export default function DynamicBlurImage({
       blurDataURL={blurDataURL}
       // TODO: atualizar alt text
       alt="Homem branco de camisa cinza e calça preta, com uma mochila preta e um sorriso. No lado esquerdo da cabeça dele tem uma bolha adicionada via edição de imagem com a logo da linguagem de programação Rust. As bolhas do lado direito da cabeça dele se referem às linguagens de programação csharp (c#) e typescript. o fundo da imagem é verde com tonalidade mais puxada pro escuro."
-      className={`transition-all duration-300 object-cover hover:scale-105 dark:border-background dark:shadow-none ${
+      className={`transition-all duration-300 object-cover hover:scale-105 ${
         isRounded ? "rounded-full" : ""
       }`}
       placeholder="blur"
