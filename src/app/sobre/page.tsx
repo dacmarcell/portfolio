@@ -1,7 +1,7 @@
 "use client";
 
 import ExperiencesList from "@/components/About/ExperiencesList";
-import DynamicBlurImage from "@/components/Home/DynamicBlurImage";
+import DynamicBlurImage from "@/components/DynamicBlurImage";
 import FadeIn from "@/components/motion/FadeIn";
 import Line from "@/components/ui/Line";
 import { motion } from "motion/react";
