@@ -11,19 +11,17 @@ const ExperiencesList = () => {
   return (
     <div className="mx-auto p-10 rounded-lg">
       <FadeIn>
-        <h2 className="text-2xl font-bold text-gray-800 text-white mb-6">
-          Experiências Profissionais
-        </h2>
+        <h2 className="text-2xl font-bold mb-6">Experiências Profissionais</h2>
       </FadeIn>
       <div className="space-y-6">
         {experiencies.map((experience: (typeof experiencies)[number]) => (
           <div
             key={experience.id}
-            className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            className="border border-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <FadeIn>
-              <div className="flex justify-between items-center">
-                <h3 className="mr-10 text-xl font-semibold text-gray-800">
+              <div className="flex justify-between items-center mb-10">
+                <h3 className="mr-10 text-xl font-semibold">
                   {experience.title}
                 </h3>
                 <ReactMarkdown
