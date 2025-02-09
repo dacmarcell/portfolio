@@ -23,60 +23,69 @@ export default function Home() {
 
   return (
     <main>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 gap-6 items-center">
+        {/* BIO - Introdução */}
         <div className="flex flex-col justify-center md:items-start md:pl-20">
-          <div className="flex flex-col justify-center p-10 md:rounded-3xl md:mr-4 border border-white">
+          <div className="flex flex-col justify-center p-10 md:rounded-3xl md:mr-4 border border-white bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
-              {/* Biography */}
-              <div className="text-5xl font-bold">
+              {/* Nome e introdução animados */}
+              <div className="text-5xl font-bold text-white">
                 <Typical
                   steps={["Olá!", 1000, "Me chamo Marcell.", 500]}
                   loop={Infinity}
                   wrapper="h1"
                 />
               </div>
-              <h2 className="text-2xl font-semibold">
+              <h2 className="text-2xl font-semibold text-gray-300 mt-2">
                 Desenvolvendo software de qualidade como desenvolvedor web
-                fullstack
+                fullstack 🚀
               </h2>
             </FadeIn>
+
+            {/* Botões de ação */}
             <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
-              {/* ContractMeButton */}
               <motion.a
                 target="_blank"
                 href={config.social_links.linkedin}
-                className="px-4 py-2 mr-2 mb-2 rounded-md transition duration-300 w-max text-lg border border-white"
+                className="px-5 py-3 mr-3 text-lg font-medium rounded-lg border border-white text-white transition duration-300 hover:bg-white hover:text-black shadow-md"
                 whileHover={{ scale: 1.05 }}
               >
-                Me contrate
+                🚀 Me contrate
               </motion.a>
               <CustomExternalLink href="/projetos">
-                Ver projetos
+                📂 Ver projetos
               </CustomExternalLink>
             </div>
           </div>
 
-          {/* div abaixo aparece somente em celular */}
-          <div className="md:hidden w-full h-10 bg-[#068155]" />
+          {/* Barra de destaque no mobile */}
+          <div className="md:hidden w-full h-10 bg-green-600 mt-4 rounded-lg shadow-md" />
 
           {/* Contato */}
-          <div className="flex flex-col justify-center p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-white">
+          <div className="flex flex-col justify-center p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-white bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
-              <h1 className="font-semibold text-xl">Contato</h1>
+              <h1 className="font-semibold text-xl text-white">📞 Contato</h1>
             </FadeIn>
             <FadeIn className="inline-flex items-center group">
               <button
-                className="text-md text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-white-800 p-1 mt-2"
+                className="text-md text-white text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-white-800 p-1 mt-2 transition duration-300"
                 onClick={() => copyToClipboard(config.email)}
               >
                 {config.email}
               </button>
-              <FaRegCopy className="ml-2 hidden group-hover:inline" />
+              <FaRegCopy className="ml-2 hidden group-hover:inline text-gray-400 transition duration-300" />
             </FadeIn>
           </div>
         </div>
+
+        {/* Imagem destacada */}
         <div className="hidden md:flex justify-center items-center">
-          <DynamicBlurImage src="/hero-design.png" height={400} width={400} />
+          <DynamicBlurImage
+            isRounded
+            src="/hero-design.png"
+            height={400}
+            width={400}
+          />
         </div>
       </div>
 
