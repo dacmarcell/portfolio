@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 import { useMemo } from "react";
 
 import FadeIn from "@/components/motion/FadeIn";
-import personalConfig from "@/utils/personalConfig";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import { CustomExternalLink } from "@/components/ui/CustomExternalLink";
 
 import json from "../../public/mocks/projects.json";
 import Card from "@/components/Card";
+import { config } from "@/utils/constants";
 
 export default function Home() {
   const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
@@ -44,7 +44,7 @@ export default function Home() {
               {/* ContractMeButton */}
               <motion.a
                 target="_blank"
-                href={personalConfig.social_links.linkedin}
+                href={config.social_links.linkedin}
                 className="px-4 py-2 mr-2 mb-2 rounded-md transition duration-300 w-max text-lg border border-white"
                 whileHover={{ scale: 1.05 }}
               >
@@ -67,9 +67,9 @@ export default function Home() {
             <FadeIn className="inline-flex items-center group">
               <button
                 className="text-md text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-white-800 p-1 mt-2"
-                onClick={() => copyToClipboard(personalConfig.email)}
+                onClick={() => copyToClipboard(config.email)}
               >
-                {personalConfig.email}
+                {config.email}
               </button>
               <FaRegCopy className="ml-2 hidden group-hover:inline" />
             </FadeIn>
