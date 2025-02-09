@@ -13,12 +13,12 @@ export default function ProjectPage({ project }: ProjectPageProps) {
   const router = useRouter();
 
   return (
-    <section className="min-h-screen bg-gray-900 text-white py-16">
+    <section className="min-h-screen bg-gray-900 py-16">
       <div className="max-w-5xl mx-auto px-6">
         {/* Botão de Voltar */}
         <button
           onClick={() => router.back()}
-          className="flex items-center text-gray-400 hover:text-white mb-6 transition"
+          className="flex items-center text-gray-400 mb-6 transition"
         >
           <BsArrowLeft className="w-5 h-5 mr-2" /> Voltar
         </button>
@@ -81,7 +81,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
         >
           <a
             href={project.url}
-            className="bg-green-700 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition"
+            className="bg-green-700 hover:bg-green-600 font-semibold px-6 py-3 rounded-lg transition"
           >
             🔗 Ver Projeto
           </a>
