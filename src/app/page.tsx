@@ -11,7 +11,7 @@ import { CustomExternalLink } from "@/components/ui/CustomExternalLink";
 
 import json from "../../public/mocks/projects.json";
 import Card from "@/components/Card";
-import { config } from "@/utils/constants";
+import { app } from "@/utils/constants";
 
 export default function Home() {
   const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="mt-5 flex flex-row items-center justify-center md:justify-start">
               <motion.a
                 target="_blank"
-                href={config.social_links.linkedin}
+                href={app.social_links.linkedin}
                 className="px-5 py-3 mr-3 text-lg font-medium rounded-lg border border-white text-white transition duration-300 hover:bg-white hover:text-black shadow-md"
                 whileHover={{ scale: 1.05 }}
               >
@@ -69,9 +69,9 @@ export default function Home() {
             <FadeIn className="inline-flex items-center group">
               <button
                 className="text-md text-white text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-white-800 p-1 mt-2 transition duration-300"
-                onClick={() => copyToClipboard(config.email)}
+                onClick={() => copyToClipboard(app.email)}
               >
-                {config.email}
+                {app.email}
               </button>
               <FaRegCopy className="ml-2 hidden group-hover:inline text-gray-400 transition duration-300" />
             </FadeIn>
