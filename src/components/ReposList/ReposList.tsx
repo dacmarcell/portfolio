@@ -2,6 +2,7 @@ import { getRepositories } from "@/functions/repositories";
 import Card from "../Card";
 import Title from "../ui/Title";
 import CustomLink from "../ui/CustomLink";
+import { BsArrowLeft } from "react-icons/bs";
 
 type Repository = {
   id: number;
@@ -18,7 +19,9 @@ export default async function ReposList() {
   if (doesRateLimitExceeded(repos.message)) {
     return (
       <>
-        <CustomLink href="/repositorios">Voltar</CustomLink>
+        <CustomLink href="/repositorios">
+          <BsArrowLeft className="w-5 h-5 mr-2" /> Voltar
+        </CustomLink>
         <h1 className="text-2xl font-bold">
           Oops! Não foi possível carregar os repositórios.
         </h1>
