@@ -65,7 +65,7 @@ export default function Page() {
         );
       })}
 
-      <div className="mt-5 p-5 rounded-lg dark:bg-gray-800 dark:text-white divide-y divide-gray-200 flex flex-col items-center">
+      <div className="mt-5 p-5 rounded-lg dark:bg-gray-800 divide-y divide-gray-200 flex flex-col items-center">
         <CommitsGraph commits={commits} />
         <div className="flex flex-col items-center space-y-2 mt-5">
           <h1>
