@@ -18,7 +18,7 @@ export default function Page() {
           />
         </FadeIn>
         <FadeIn>
-          <p className="mr-10 mt-10 text-lg text-start rounded-lg p-10 border border-black ">
+          <p className="text-white mr-10 mt-10 text-lg text-start rounded-lg p-10 border border-white">
             Bacharelando em Ciência da Computação e Desenvolvedor Web FullStack
             com mais de um ano de experiência. Tenho paixão por escrever código
             limpo e eficiente, seguindo princípios como DRY, SOLID, KISS e Clean
@@ -35,7 +35,7 @@ export default function Page() {
 
       <div className="flex flex-row mt-10">
         <FadeIn>
-          <p className="ml-10 mt-10 text-lg text-end rounded-lg border border-black p-10">
+          <p className="text-white ml-10 mt-10 text-lg text-end rounded-lg border border-white p-10">
             Atualmente, trabalho com o ecossistema PHP, especialmente com
             Laravel, e sou proficiente em diversas linguagens, como C#,
             Typescript, Rust e Python. Também tenho experiência com frameworks
@@ -50,7 +50,7 @@ export default function Page() {
       </div>
 
       <motion.p
-        className="text-md p-2 border border-black rounded-lg bg-grey-500/[0.8] w-1/2 m-auto mt-10 text-center text-bold"
+        className="text-white text-md p-2 border border-white rounded-lg bg-grey-500/[0.8] w-1/2 m-auto mt-10 text-center text-bold"
         whileHover={{ scale: 1.1 }}
       >
         3° lugar no hackathon SemComp UFBA 2024
@@ -66,7 +66,7 @@ export default function Page() {
         </FadeIn>
 
         <FadeIn className="text-lg">
-          <p className="mt-10 border border-black p-10 rounded-lg">
+          <p className="mt-10 border border-white p-10 rounded-lg text-white">
             Foi uma grande honra participar do Hackathon{" "}
             <b>SEMCOMP UFBA 2024</b>. Por lá desenvolvemos uma solução que leva
             tecnologia e informação para as comunidades marginalizadas.
@@ -93,6 +93,7 @@ export default function Page() {
       </div>
 
       <Line />
+
       <ExperiencesList />
     </>
   );
