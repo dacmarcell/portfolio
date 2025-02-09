@@ -1,11 +1,9 @@
-import json from "../../../../public/mocks/projects.json";
-import Title from "@/components/ui/Title";
+import { projects } from "../../../../public/mocks/projects.json";
 import CustomLink from "@/components/ui/CustomLink";
-import Chip from "@/components/ui/Chip";
-import PreviewButton from "@/components/PreviewButton";
+import ProjectPage from "@/components/ProjectPage";
 
 async function getProjectByID(id: number) {
-  return isNaN(id) ? null : json.projects.find((project) => project.id === id);
+  return isNaN(id) ? null : projects.find((project) => project.id === id);
 }
 
 export default async function Page({
@@ -27,21 +25,5 @@ export default async function Page({
     );
   }
 
-  return (
-    <main className="p-5 bg-dark text-foreground  w-full max-w-4xl mx-auto">
-      <div className="flex justify-between items-center mb-6">
-        <Title>{project.title}</Title>
-        <CustomLink href="/projetos">Voltar</CustomLink>
-      </div>
-      <p className="text-lg text-center text-gray-400 mb-6">
-        {project.description}
-      </p>
-      <div className="flex justify-center flex-wrap gap-2 mb-6">
-        {project.technologies.map((technology) => (
-          <Chip key={technology} element={technology} />
-        ))}
-      </div>
-      <PreviewButton project={project} />
-    </main>
-  );
+  return <ProjectPage project={project} />;
 }
