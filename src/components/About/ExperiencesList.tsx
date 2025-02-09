@@ -4,29 +4,19 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-import json from "../../../public/mocks/experiences.json";
+import { experiencies } from "../../../public/mocks/experiences.json";
 import FadeIn from "../motion/FadeIn";
 
-interface Experience {
-  id: number;
-  title: string;
-  company: string;
-  startMonth: string;
-  endMonth: string;
-  technologies: string[];
-  description: string;
-}
-
-const ExperiencesList: React.FC = () => {
+const ExperiencesList = () => {
   return (
-    <div className="max-w-4xl mx-auto p-2 rounded-lg">
+    <div className="mx-auto p-10 rounded-lg">
       <FadeIn>
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+        <h2 className="text-2xl font-bold text-gray-800 text-white mb-6">
           Experiências Profissionais
         </h2>
       </FadeIn>
       <div className="space-y-6">
-        {json.experiencies.map((experience: Experience) => (
+        {experiencies.map((experience: (typeof experiencies)[number]) => (
           <div
             key={experience.id}
             className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
@@ -36,20 +26,17 @@ const ExperiencesList: React.FC = () => {
                 <h3 className="mr-10 text-xl font-semibold text-gray-800">
                   {experience.title}
                 </h3>
-                <span className="text-sm text-gray-500">
-                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                    {experience.description}
-                  </ReactMarkdown>
-                </span>
+                <ReactMarkdown
+                  rehypePlugins={[rehypeRaw]}
+                  className="text-sm text-gray-500"
+                >
+                  {experience.description}
+                </ReactMarkdown>
               </div>
-              <p className="text-gray-700 mt-2">
-                <strong>{experience.company}</strong>
-              </p>
-              <div className="mt-4 text-center">
-                <span className="text-gray-700 text-lg font-semibold">
-                  {experience.startMonth} - {experience.endMonth}
-                </span>
-              </div>
+              <b className="text-gray-700 mt-5 mr-5">{experience.company}</b>
+              <span className="mt-4 text-center text-gray-700 text-lg font-semibold">
+                {experience.startMonth} - {experience.endMonth}
+              </span>
               <div className="mt-4">
                 <h4 className="text-sm font-medium text-gray-600">
                   Tecnologias:
