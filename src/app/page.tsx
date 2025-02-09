@@ -45,23 +45,24 @@ export default function Home() {
               </CustomExternalLink>
             </div>
           </div>
+
           {/* div abaixo aparece somente em celular */}
           <div className="md:hidden w-full h-10 bg-[#068155]" />
+
+          {/* Contato */}
           <div className="flex flex-col justify-center p-10 bg-slate-200/[0.5] dark:bg-white md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-black">
             <FadeIn>
               <h1 className="font-semibold text-xl dark:text-black">Contato</h1>
             </FadeIn>
-            <div className="inline-flex items-center group">
-              <FadeIn>
-                <button
-                  className="text-md text-center text-black rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-green-300 p-1 mt-2"
-                  onClick={() => copyToClipboard(personalConfig.email)}
-                >
-                  {personalConfig.email}
-                </button>
-                <FaRegCopy className="ml-2 hidden text-black group-hover:inline" />
-              </FadeIn>
-            </div>
+            <FadeIn className="inline-flex items-center group">
+              <button
+                className="text-md text-center text-black rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-green-300 p-1 mt-2"
+                onClick={() => copyToClipboard(personalConfig.email)}
+              >
+                {personalConfig.email}
+              </button>
+              <FaRegCopy className="ml-2 hidden text-black group-hover:inline" />
+            </FadeIn>
           </div>
         </div>
         <div className="hidden md:flex justify-center items-center">
