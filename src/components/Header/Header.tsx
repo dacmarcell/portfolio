@@ -12,7 +12,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="py-4 sticky top-0 z-50 px-5 container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <header className="rounded rounded-full bg-gray-900 py-4 sticky top-0 z-50 px-5 container mx-auto flex flex-col md:flex-row justify-between items-center">
       <DynamicBlurImage src="/light-logo.png" width={110} />
       <nav>
         <ul className="flex gap-x-6">
