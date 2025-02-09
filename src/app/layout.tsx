@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
         <RepositoryWrapper>
           <Header />
-          <div className="min-h-screen font-[family-name:var(--font-geist-sans)] dark:bg-slate-950">
+          <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
             {children}
             <Chatbot />
           </div>
