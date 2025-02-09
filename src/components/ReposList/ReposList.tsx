@@ -9,10 +9,10 @@ type Repository = {
   description: string;
 };
 
-const doesRateLimitExceeded = (message?: string) =>
-  message?.includes("API rate limit exceeded") ?? false;
-
 export default async function ReposList() {
+  const doesRateLimitExceeded = (message?: string) =>
+    message?.includes("API rate limit exceeded") ?? false;
+
   const repos = await getRepositories();
 
   if (doesRateLimitExceeded(repos.message)) {
@@ -31,24 +31,22 @@ export default async function ReposList() {
     );
   }
 
-  const reposList = repos.map((repo: Repository) => {
-    return (
-      <Card
-        isRepository
-        key={repo.id}
-        title={repo.name}
-        id={repo.id.toString()}
-        description={repo.description}
-      />
-    );
-  });
-
   return (
-    <div>
-      <Title>Repositórios no Github</Title>
+    <>
+      <Title className="text-white">Repositórios no Github</Title>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {reposList}
+        {repos.map((repo: Repository) => {
+          return (
+            <Card
+              isRepository
+              key={repo.id}
+              title={repo.name}
+              id={repo.id.toString()}
+              description={repo.description}
+            />
+          );
+        })}
       </div>
-    </div>
+    </>
   );
 }
