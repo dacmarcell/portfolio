@@ -12,7 +12,9 @@ export default function Home() {
           <div className="md:hidden w-full h-10 bg-[#068155]" />
           <Informations />
         </div>
-        <DynamicBlurImage src="/hero-design.png" height={400} width={500} />
+        <div className="hidden md:flex justify-center items-center">
+          <DynamicBlurImage src="/hero-design.png" height={400} width={400} />
+        </div>
       </div>
     </main>
   );
