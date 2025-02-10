@@ -80,6 +80,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
           className="mt-8 flex gap-4"
         >
           <a
+            target="_blank"
             href={project.url}
             className="bg-green-700 hover:bg-green-600 font-semibold px-6 py-3 rounded-lg transition"
           >
