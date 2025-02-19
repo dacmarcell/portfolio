@@ -4,8 +4,8 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-import { experiencies } from "../../../public/mocks/experiences.json";
-import FadeIn from "../motion/FadeIn";
+import { experiencies } from "../../../../public/mocks/experiences.json";
+import FadeIn from "../../../components/motion/FadeIn";
 
 const ExperiencesList = () => {
   return (

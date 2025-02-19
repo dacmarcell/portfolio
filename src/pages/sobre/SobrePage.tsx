@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTrophy } from "react-icons/fa";
 
-import ExperiencesList from "@/components/About/ExperiencesList";
+import ExperiencesList from "@/pages/sobre/components/ExperiencesList";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import FadeIn from "@/components/motion/FadeIn";
