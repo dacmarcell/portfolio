@@ -1,9 +1,5 @@
-import ReposList from "@/components/ReposList/ReposList";
+import RepositoriosPage from "@/pages/repositorios/RepositoriosPage";
 
 export default function Page() {
-  return (
-    <main className="p-5">
-      <ReposList />
-    </main>
-  );
+  return <RepositoriosPage />;
 }
