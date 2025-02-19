@@ -1,17 +1,18 @@
 "use client";
 
-import Typical from "react-typical";
 import { FaRegCopy } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Typical from "react-typical";
 import { useMemo } from "react";
+import Link from "next/link";
 
 import FadeIn from "@/components/motion/FadeIn";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
-import { CustomExternalLink } from "@/components/ui/CustomExternalLink";
 
 import json from "../../public/mocks/projects.json";
 import Card from "@/components/Card";
 import { app } from "@/utils/constants";
+import { MarqueeTechs } from "@/components/MarqueeTechs";
 
 export default function Home() {
   const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
@@ -23,7 +24,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 gap-6 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-[200px] gap-6 items-center">
         {/* BIO - Introdução */}
         <div className="flex flex-col justify-center md:items-start md:pl-20">
           <div className="flex flex-col justify-center p-10 md:rounded-3xl md:mr-4 border border-white bg-white/10 backdrop-blur-md shadow-lg">
@@ -52,9 +53,12 @@ export default function Home() {
               >
                 🚀 Me contrate
               </motion.a>
-              <CustomExternalLink href="/projetos">
-                📂 Ver projetos
-              </CustomExternalLink>
+              <Link
+                href="/projetos"
+                className="flex flex-row hover:underline items-center dark:text-black"
+              >
+                <span>📂 Ver projetos</span>
+              </Link>
             </div>
           </div>
 
@@ -85,10 +89,12 @@ export default function Home() {
           />
         </div>
       </div>
-
+      <div className="mt-[210px]">
+        <MarqueeTechs />
+      </div>
       {/* Projetos selecionados */}
       {/* Card de projeto */}
-      <section className="py-20 mt-10">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">
             🚀 Projetos Selecionados
