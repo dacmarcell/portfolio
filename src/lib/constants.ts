@@ -7,5 +7,7 @@ export const app = {
     github: "https://github.com/dacmarcell",
     linkedin: "https://linkedin.com/in/marcell-dactes",
     email: "mailto:devmarcell@protonmail.com",
+    whatsapp:
+      "https://wa.me/5571992760849?text=Olá%20Marcell! Gostaria de fazer uma cotação.",
   },
 };

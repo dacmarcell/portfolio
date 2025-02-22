@@ -38,9 +38,7 @@ export default function Header() {
           })}
         </ul>
       </nav>
-      <div>
-        <SocialIcons />
-      </div>
+      <SocialIcons />
     </header>
   );
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import { RepositoryWrapper } from "@/contexts/RepositoryContext";
 import Chatbot from "@/components/Chatbot";
+import BottomDock from "@/components/Dock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
             <Header />
             {children}
             <Chatbot />
+            <BottomDock />
           </div>
         </RepositoryWrapper>
       </body>

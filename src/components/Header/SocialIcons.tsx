@@ -1,9 +1,13 @@
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdWhatsapp } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { app } from "@/lib/constants";
 
-export default function SocialIcons() {
+interface SocialIconsProps {
+  size?: number;
+}
+
+export default function SocialIcons({ size = 25 }: SocialIconsProps) {
   return (
     <div className="flex gap-x-4">
       <a
@@ -11,21 +15,28 @@ export default function SocialIcons() {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <FaGithub className="text-white hover:text-green-800" />
+        <FaGithub className="text-white hover:text-green-800" size={size} />
       </a>
       <a
         href={app.social_links.linkedin}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <FaLinkedin className="text-white hover:text-green-800" />
+        <FaLinkedin className="text-white hover:text-green-800" size={size} />
       </a>
       <a
         href={app.social_links.email}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <MdEmail className="text-white hover:text-green-800" />
+        <MdEmail className="text-white hover:text-green-800" size={size} />
+      </a>
+      <a
+        href={app.social_links.whatsapp}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <MdWhatsapp className="text-white hover:text-green-800" size={size} />
       </a>
     </div>
   );
