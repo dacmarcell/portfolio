@@ -11,9 +11,10 @@ import FadeIn from "@/components/motion/FadeIn";
 import Card from "@/components/Card";
 import { app } from "@/lib/constants";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
+import { Project } from "@/interfaces/projects";
 
 export default function HomePage() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {

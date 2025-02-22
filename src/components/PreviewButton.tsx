@@ -5,11 +5,11 @@ import { useState } from "react";
 import { GoLinkExternal } from "react-icons/go";
 
 import ScreenshotBox from "./ScreenshotBox";
-import json from "../../public/mocks/projects.json";
 import env from "@/lib/env";
+import { Project } from "@/interfaces/projects";
 
 interface PreviewButtonProps {
-  project: (typeof json.projects)[number];
+  project: Project;
 }
 
 const PreviewButton = ({ project }: PreviewButtonProps) => {

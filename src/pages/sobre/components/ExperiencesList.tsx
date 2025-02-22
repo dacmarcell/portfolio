@@ -1,14 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-import json from "../../../../public/mocks/experiences.json";
 import FadeIn from "../../../components/motion/FadeIn";
+import { Experience } from "@/interfaces/experiences";
 
-export const ExperiencesList = () => {
-  const [experiences] = useState(json.experiences);
+export default function ExperiencesList() {
+  const [experiences, setExperiences] = useState<Experience[]>([]);
+  const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    startTransition(() => {
+      fetch("/api/experiences")
+        .then((response) => response.json())
+        .then((experiencesData) => setExperiences(experiencesData));
+    });
+  }, []);
+
+  if (isPending) {
+    return <h1>Carregando...</h1>;
+  }
 
   return (
     <div className="mx-auto p-10 rounded-lg">
@@ -70,4 +83,4 @@ export const ExperiencesList = () => {
       </div>
     </div>
   );
-};
+}

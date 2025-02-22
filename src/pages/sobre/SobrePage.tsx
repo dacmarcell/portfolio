@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { FaTrophy } from "react-icons/fa";
 
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { ExperiencesList } from "./components/ExperiencesList";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import FadeIn from "@/components/motion/FadeIn";
 import Line from "@/components/ui/Line";
+import ExperiencesList from "./components/ExperiencesList";
 
 export default function SobrePage() {
   return (

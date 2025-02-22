@@ -1,12 +1,12 @@
 "use client";
 
+import { Project } from "@/interfaces/projects";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { BsArrowLeft } from "react-icons/bs";
-import json from "../../public/mocks/projects.json";
 
 interface ProjectPageProps {
-  project: (typeof json.projects)[number];
+  project: Project;
 }
 
 export default function ProjectPage({ project }: ProjectPageProps) {
