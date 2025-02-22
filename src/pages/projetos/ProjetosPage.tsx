@@ -4,15 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 
 import Card from "@/components/Card";
 import Title from "@/components/ui/Title";
-
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  url: string;
-  isFavorite: boolean;
-  technologies: string[];
-};
+import { Project } from "@/interfaces/projects";
 
 export default function ProjetosPage() {
   const [projects, setProjects] = useState<Project[]>([]);

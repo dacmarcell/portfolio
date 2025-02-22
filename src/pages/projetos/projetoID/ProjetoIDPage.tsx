@@ -1,10 +1,10 @@
 import CustomLink from "@/components/ui/CustomLink";
-import json from "../../../../public/mocks/projects.json";
 import { BsArrowLeft } from "react-icons/bs";
 import ProjectPage from "@/components/ProjectPage";
+import { Project } from "@/interfaces/projects";
 
 interface ProjetoIDPageProps {
-  project?: (typeof json.projects)[number];
+  project?: Project;
 }
 
 export default function ProjetoIDPage({ project }: ProjetoIDPageProps) {
@@ -15,9 +15,7 @@ export default function ProjetoIDPage({ project }: ProjetoIDPageProps) {
           <BsArrowLeft className="w-5 h-5 mr-2" />
           Voltar
         </CustomLink>
-        <h1 className="text-3xl font-bold text-red-500">
-          Projeto não encontrado
-        </h1>
+        <h1>Carregando...</h1>
       </main>
     );
   }

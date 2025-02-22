@@ -1,22 +1,18 @@
 "use client";
 
 import { getRepositories } from "@/functions/repositories";
-import { createContext, useContext, useEffect, useState } from "react";
-
-export type Repository = {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  commits_url: string;
-  created_at: Date;
-  updated_at: Date;
-  language: string;
-  topics: Array<string>;
-};
+import { Repository } from "@/interfaces/repositories";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useTransition,
+} from "react";
 
 interface RepositoryContextProps {
-  repositories: Array<Repository>;
+  isPending: boolean;
+  repositories: Repository[];
   foundRepository: Repository | null;
   setID: React.Dispatch<React.SetStateAction<number | null>>;
 }
@@ -33,6 +29,7 @@ export function RepositoryWrapper(props: { children: React.ReactNode }) {
     null
   );
   const [ID, setID] = useState<number | null>(null);
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const getRepositoryByID = (repos: Array<Repository>) => {
@@ -46,12 +43,14 @@ export function RepositoryWrapper(props: { children: React.ReactNode }) {
   }, [ID, repositories]);
 
   useEffect(() => {
-    getRepositories().then(setRepositories);
+    startTransition(() => {
+      getRepositories().then(setRepositories);
+    });
   }, []);
 
   return (
     <RepositoryContext.Provider
-      value={{ repositories, foundRepository, setID }}
+      value={{ isPending, repositories, foundRepository, setID }}
     >
       {children}
     </RepositoryContext.Provider>
