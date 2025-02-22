@@ -1,7 +1,7 @@
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-import { app } from "@/utils/constants";
+import { app } from "@/lib/constants";
 
 export default function SocialIcons() {
   return (

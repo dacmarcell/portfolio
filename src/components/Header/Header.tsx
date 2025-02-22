@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 import SocialIcons from "./SocialIcons";
@@ -9,6 +10,7 @@ import DynamicBlurImage from "../DynamicBlurImage";
 import json from "../../../public/mocks/navigation.json";
 
 export default function Header() {
+  const [navigation] = useState(json.navigation);
   const pathname = usePathname();
 
   return (
@@ -16,7 +18,7 @@ export default function Header() {
       <DynamicBlurImage src="/light-logo.png" width={110} />
       <nav>
         <ul className="flex gap-x-6">
-          {json.navigation.map((item) => {
+          {navigation.map((item) => {
             return (
               <li key={item.id}>
                 <Link

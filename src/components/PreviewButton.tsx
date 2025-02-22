@@ -6,6 +6,7 @@ import { GoLinkExternal } from "react-icons/go";
 
 import ScreenshotBox from "./ScreenshotBox";
 import json from "../../public/mocks/projects.json";
+import env from "@/lib/env";
 
 interface PreviewButtonProps {
   project: (typeof json.projects)[number];
@@ -24,7 +25,7 @@ const PreviewButton = ({ project }: PreviewButtonProps) => {
       setIsLoading(true);
       const encodedURI = encodeURIComponent(project.url);
       const response = await fetch(
-        `https://opengraph.io/api/1.1/screenshot/${encodedURI}?accept_lang=auto&quality=80&dimensions=md&app_id=${process.env.NEXT_PUBLIC_OPEN_GRAPH_API_KEY}`
+        `https://opengraph.io/api/1.1/screenshot/${encodedURI}?accept_lang=auto&quality=80&dimensions=md&app_id=${env.open_graph_api_key}`
       );
 
       const data: { message: string; screenshotUrl: string } =

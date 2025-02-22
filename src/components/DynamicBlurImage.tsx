@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { dynamicBlurDataUrl } from "@/utils/dynamicBlurDataUrl";
+import { dynamicBlurDataUrl } from "@/lib/dynamicBlurDataUrl";
 import { useEffect, useState } from "react";
-import { DEFAULT_BLUR } from "@/utils/constants";
+import { DEFAULT_BLUR } from "@/lib/constants";
 
 interface DynamicBlurImageProps {
   src: string;

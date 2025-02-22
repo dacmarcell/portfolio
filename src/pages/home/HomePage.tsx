@@ -1,24 +1,44 @@
+"use client";
+
 import { FaRegCopy } from "react-icons/fa";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import Typical from "react-typical";
-import { useMemo } from "react";
 import Link from "next/link";
-
-import json from "../../../public/mocks/projects.json";
 
 import { MarqueeTechs } from "@/components/MarqueeTechs";
 import FadeIn from "@/components/motion/FadeIn";
 import Card from "@/components/Card";
-import { app } from "@/utils/constants";
+import { app } from "@/lib/constants";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 
 export default function HomePage() {
+  const [projects, setProjects] = useState([]);
+  const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    startTransition(() => {
+      fetch("/api/projects")
+        .then((response) => response.json())
+        .then((projectsData) => setProjects(projectsData));
+    });
+  }, []);
+
   const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
 
-  const getFavoriteProjects = () =>
-    json.projects.filter((project) => project.isFavorite);
+  const favoriteProjects = useMemo(() => {
+    return projects.filter((project) => project.isFavorite);
+  }, [projects]);
 
-  const favoriteProjects = useMemo(() => getFavoriteProjects(), []);
+  if (isPending) {
+    return (
+      <main className="p-10">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <h1>Carregando...</h1>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main>
