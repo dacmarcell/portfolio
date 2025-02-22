@@ -1,4 +1,3 @@
-import { Commit } from "@/app/repositorios/repositorio/page";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import {
@@ -11,9 +10,10 @@ import {
   Line,
 } from "recharts";
 import Title from "./ui/Title";
+import { Commit } from "@/pages/repositorios/repositorio/RepositorioPage";
 
 interface CommitsGraphProps {
-  commits: Array<Commit>;
+  commits: Commit[];
 }
 
 export default function CommitsGraph(props: CommitsGraphProps) {
