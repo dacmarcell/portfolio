@@ -1,17 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { usePathname } from "next/navigation";
 
 import SocialIcons from "./SocialIcons";
 import DynamicBlurImage from "../DynamicBlurImage";
-
-import json from "../../../public/mocks/navigation.json";
+import { Navigation } from "@/interfaces/navigations";
 
 export default function Header() {
-  const [navigation] = useState(json.navigation);
+  const [navigation, setNavigation] = useState<Navigation[]>([]);
+  const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
+
+  useEffect(() => {
+    startTransition(() => {
+      fetch("/api/navigation")
+        .then((response) => response.json())
+        .then((navigationData) => {
+          setNavigation(navigationData);
+        });
+    });
+  }, []);
+
+  if (isPending) {
+    return <h1>Carregando...</h1>;
+  }
 
   return (
     <header className="rounded rounded-full bg-gray-900 py-4 sticky top-0 z-50 px-5 container mx-auto flex flex-col md:flex-row justify-between items-center">
