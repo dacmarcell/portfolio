@@ -1,10 +1,10 @@
 import CustomLink from "@/components/ui/CustomLink";
-import { projects } from "../../../../public/mocks/projects.json";
+import json from "../../../../public/mocks/projects.json";
 import { BsArrowLeft } from "react-icons/bs";
 import ProjectPage from "@/components/ProjectPage";
 
 interface ProjetoIDPageProps {
-  project?: (typeof projects)[number];
+  project?: (typeof json.projects)[number];
 }
 
 export default function ProjetoIDPage({ project }: ProjetoIDPageProps) {

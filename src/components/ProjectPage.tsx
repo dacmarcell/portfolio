@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { BsArrowLeft } from "react-icons/bs";
-import { projects } from "../../public/mocks/projects.json";
+import json from "../../public/mocks/projects.json";
 
 interface ProjectPageProps {
-  project: (typeof projects)[number];
+  project: (typeof json.projects)[number];
 }
 
 export default function ProjectPage({ project }: ProjectPageProps) {

@@ -1,22 +1,22 @@
+import { FaRegCopy } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Typical from "react-typical";
 import { useMemo } from "react";
+import Link from "next/link";
 
-import { projects } from "../../../public/mocks/projects.json";
+import json from "../../../public/mocks/projects.json";
 
 import { MarqueeTechs } from "@/components/MarqueeTechs";
 import FadeIn from "@/components/motion/FadeIn";
 import Card from "@/components/Card";
 import { app } from "@/utils/constants";
-import Link from "next/link";
-import { FaRegCopy } from "react-icons/fa";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 
 export default function HomePage() {
   const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
 
   const getFavoriteProjects = () =>
-    projects.filter((project) => project.isFavorite);
+    json.projects.filter((project) => project.isFavorite);
 
   const favoriteProjects = useMemo(() => getFavoriteProjects(), []);
 

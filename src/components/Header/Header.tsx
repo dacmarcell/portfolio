@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import SocialIcons from "./SocialIcons";
 import DynamicBlurImage from "../DynamicBlurImage";
 
-import { navigation } from "../../../public/mocks/navigation.json";
+import json from "../../../public/mocks/navigation.json";
 
 export default function Header() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export default function Header() {
       <DynamicBlurImage src="/light-logo.png" width={110} />
       <nav>
         <ul className="flex gap-x-6">
-          {navigation.map((item) => {
+          {json.navigation.map((item) => {
             return (
               <li key={item.id}>
                 <Link
