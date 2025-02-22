@@ -10,7 +10,7 @@ import {
   Line,
 } from "recharts";
 import Title from "./ui/Title";
-import { Commit } from "@/pages/repositorios/repositorio/RepositorioPage";
+import { Commit } from "@/interfaces/commits";
 
 interface CommitsGraphProps {
   commits: Commit[];
