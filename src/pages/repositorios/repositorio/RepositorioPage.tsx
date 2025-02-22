@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { useEffect, useState, useTransition } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 
@@ -9,15 +8,13 @@ import CommitsGraph from "@/components/CommitsGraph";
 
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
 import { Commit } from "@/interfaces/commits";
-
-const formatDateTime = (date?: Date) =>
-  dayjs(date).format("DD/MM/YYYY - HH:mm") ?? "-";
+import { formatDateToDMYHM } from "@/lib/utils";
 
 export default function RepositorioPage() {
   const [commits, setCommits] = useState<Commit[]>([]);
+  const [isPending, startTransition] = useTransition();
   const { foundRepository, isPending: isRepositoryPending } =
     useRepositoryContext();
-  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     if (foundRepository?.commits_url) {
@@ -40,7 +37,7 @@ export default function RepositorioPage() {
           </CustomLink>
         </div>
         <h1 className="text-4xl font-bold text-red-400 animate-pulse">
-          <h1>Carregando...</h1>
+          Carregando...
         </h1>
       </main>
     );
@@ -83,13 +80,13 @@ export default function RepositorioPage() {
         <h1 className="text-lg text-gray-300">
           ⏳ Última atualização:{" "}
           <span className="font-semibold text-white">
-            {formatDateTime(foundRepository?.updated_at)}
+            {formatDateToDMYHM(foundRepository?.updated_at)}
           </span>
         </h1>
         <h1 className="text-lg text-gray-300 mt-2">
           🛠️ Criado em:{" "}
           <span className="font-semibold text-white">
-            {formatDateTime(foundRepository?.created_at)}
+            {formatDateToDMYHM(foundRepository?.created_at)}
           </span>
         </h1>
         <a
