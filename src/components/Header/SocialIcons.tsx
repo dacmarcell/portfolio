@@ -9,7 +9,7 @@ interface SocialIconsProps {
 
 export default function SocialIcons({ size = 25 }: SocialIconsProps) {
   return (
-    <div className="flex gap-x-4">
+    <div className="flex gap-x-4 hidden md:flex">
       <a
         href={app.social_links.github}
         rel="noopener noreferrer"
