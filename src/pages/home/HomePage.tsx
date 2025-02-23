@@ -1,6 +1,6 @@
 "use client";
 
-import { FaRegCopy } from "react-icons/fa";
+import { FaCheck, FaRegCopy } from "react-icons/fa";
 import { useEffect, useMemo, useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import Typical from "react-typical";
@@ -15,6 +15,7 @@ import { Project } from "@/interfaces/projects";
 
 export default function HomePage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [copiedToClipboard, setCopiedToClipboard] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -25,7 +26,15 @@ export default function HomePage() {
     });
   }, []);
 
-  const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);
+  const copyEmailToClipboard = () => {
+    navigator.clipboard.writeText(app.email);
+
+    setCopiedToClipboard(true);
+
+    setTimeout(() => {
+      setCopiedToClipboard(false);
+    }, 5000);
+  };
 
   const favoriteProjects = useMemo(() => {
     return projects.filter((project) => project.isFavorite);
@@ -89,11 +98,17 @@ export default function HomePage() {
             <FadeIn className="inline-flex items-center group">
               <button
                 className="text-md text-white text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-white-800 p-1 mt-2 transition duration-300"
-                onClick={() => copyToClipboard(app.email)}
+                onClick={() => {
+                  copyEmailToClipboard();
+                }}
               >
                 {app.email}
               </button>
-              <FaRegCopy className="ml-2 hidden group-hover:inline text-gray-400 transition duration-300" />
+              {copiedToClipboard ? (
+                <FaCheck className="ml-2 hidden group-hover:inline text-gray-400 transition duration-300" />
+              ) : (
+                <FaRegCopy className="ml-2 hidden group-hover:inline text-gray-400 transition duration-300" />
+              )}
             </FadeIn>
           </div>
         </div>
