@@ -4,8 +4,8 @@ import { FaNodeJs, FaLaravel } from "react-icons/fa";
 
 export default function Intro() {
   return (
-    <div className="flex items-center justify-center h-screen w-full bg-black">
-      <Terminal className="bg-black text-white shadow-lg p-5">
+    <div className="flex items-center justify-center h-screen w-full">
+      <Terminal className="bg-gray-900 text-white shadow-lg p-5">
         <TypingAnimation>
           &gt; inicializando devmarcell_portfolio.exe...
         </TypingAnimation>
@@ -24,7 +24,7 @@ export default function Intro() {
           <span>✔ Full-stack, arquitetura limpa e performance.</span>
         </AnimatedSpan>
         <AnimatedSpan delay={4000} className="text-green-500 mt-5">
-          <span>✔ APIs, banco de dados.</span>
+          <span>✔ APIs e banco de dados.</span>
         </AnimatedSpan>
         <AnimatedSpan delay={5000} className="text-green-500 mt-5">
           <span>✔ Escalabilidade, segurança e agilidade.</span>
