@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import { RepositoryWrapper } from "@/contexts/RepositoryContext";
 import Chatbot from "@/components/Chatbot";
 import BottomDock from "@/components/Dock";
+import { IntroWrapper } from "@/contexts/IntroContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,14 +32,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
-        <RepositoryWrapper>
-          <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-            <Header />
-            {children}
-            <Chatbot />
-            <BottomDock />
-          </div>
-        </RepositoryWrapper>
+        <IntroWrapper>
+          <RepositoryWrapper>
+            <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+              <Header />
+              {children}
+              <Chatbot />
+              <BottomDock />
+            </div>
+          </RepositoryWrapper>
+        </IntroWrapper>
       </body>
     </html>
   );
