@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useTransition } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState, useTransition } from "react";
 
 import SocialIcons from "./SocialIcons";
 import DynamicBlurImage from "../DynamicBlurImage";
@@ -30,7 +30,7 @@ export default function Header() {
   }
 
   return isIntroFinished ? (
-    <header className="rounded rounded-full bg-gray-900 py-4 sticky top-0 z-50 px-5 container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <header className="rounded rounded-full bg-gray-900 py-4 sticky top-0 z-50 px-5 container mx-auto flex flex-col md:flex-row justify-between items-center gap-y-4 md:gap-y-0 h-50 md:h-20">
       <DynamicBlurImage src="/light-logo.png" width={110} />
       <nav>
         <ul className="flex gap-x-6">
@@ -38,7 +38,7 @@ export default function Header() {
             return (
               <li key={item.id}>
                 <Link
-                  target={item.endpoint.includes("https") ? "_blank" : ""}
+                  target={item.endpoint.includes("https") ? "_blank" : "_self"}
                   href={item.endpoint}
                   className={
                     "hover:underline " +
