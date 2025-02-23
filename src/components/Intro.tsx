@@ -1,14 +1,29 @@
 import { AnimatedSpan, Terminal, TypingAnimation } from "./magicui/terminal";
 import { SiNextdotjs, SiVuedotjs, SiDotnet } from "react-icons/si";
-import { FaNodeJs, FaLaravel } from "react-icons/fa";
+import { FaNodeJs, FaLaravel, FaArrowRight } from "react-icons/fa";
+import { useIntroContext } from "@/contexts/IntroContext";
 
 export default function Intro() {
+  const { setIsIntroFinished } = useIntroContext();
+
+  function handleSkip() {
+    setIsIntroFinished(true);
+  }
+
   return (
     <div className="flex items-center justify-center h-screen w-full">
+      <button
+        onClick={handleSkip}
+        className="absolute top-5 right-5 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-800 transition duration-300 ease-in-out flex items-center gap-2"
+      >
+        Pular
+        <FaArrowRight className="ml-2" />
+      </button>
       <Terminal className="bg-gray-900 text-white shadow-lg p-5">
         <TypingAnimation>
           &gt; inicializando devmarcell_portfolio.exe...
         </TypingAnimation>
+
         <AnimatedSpan
           delay={2000}
           className="text-green-500 flex items-center gap-2 mt-5"
