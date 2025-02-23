@@ -2,7 +2,7 @@ import { AnimatedSpan, Terminal, TypingAnimation } from "./magicui/terminal";
 
 export default function Intro() {
   return (
-    <Terminal>
+    <Terminal className="bg-black text-white">
       <TypingAnimation>&gt; pnpm dlx shadcn@latest init</TypingAnimation>
 
       <AnimatedSpan delay={1500} className="text-green-500">

@@ -1,11 +1,12 @@
 "use client";
 
 import Intro from "@/components/Intro";
+import { useIntroContext } from "@/contexts/IntroContext";
 import HomePage from "@/pages/home/HomePage";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [isIntroFinished, setIsIntroFinished] = useState(false);
+  const { isIntroFinished, setIsIntroFinished } = useIntroContext();
 
   useEffect(() => {
     setTimeout(() => {
@@ -13,5 +14,11 @@ export default function Home() {
     }, 10000);
   });
 
-  return isIntroFinished ? <HomePage /> : <Intro />;
+  return isIntroFinished ? (
+    <HomePage />
+  ) : (
+    <div className="flex items-center justify-center h-screen w-full">
+      <Intro />
+    </div>
+  );
 }

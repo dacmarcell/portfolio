@@ -1,9 +1,12 @@
 "use client";
 
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { useIntroContext } from "@/contexts/IntroContext";
 
 export default function Chatbot() {
-  return (
+  const { isIntroFinished } = useIntroContext();
+
+  return isIntroFinished ? (
     <FloatingWhatsApp
       allowEsc
       placeholder="Me fale sobre seu projeto! 🚀"
@@ -14,5 +17,5 @@ export default function Chatbot() {
       statusMessage="⏳ Poucas vagas disponíveis! Vamos conversar?"
       chatboxHeight={500}
     />
-  );
+  ) : null;
 }

@@ -7,11 +7,12 @@ import { Dock, DockIcon } from "./magicui/dock";
 import FadeIn from "./motion/FadeIn";
 import { app } from "@/lib/constants";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
-
-export type IconProps = React.HTMLAttributes<SVGElement>;
+import { useIntroContext } from "@/contexts/IntroContext";
 
 export default function BottomDock() {
-  return (
+  const { isIntroFinished } = useIntroContext();
+
+  return isIntroFinished ? (
     <FadeIn>
       <div className="fixed bottom-5 left-1/2 -translate-x-1/2">
         <Dock direction="middle">
@@ -61,5 +62,5 @@ export default function BottomDock() {
         </Dock>
       </div>
     </FadeIn>
-  );
+  ) : null;
 }
