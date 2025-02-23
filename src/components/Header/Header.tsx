@@ -7,10 +7,12 @@ import { usePathname } from "next/navigation";
 import SocialIcons from "./SocialIcons";
 import DynamicBlurImage from "../DynamicBlurImage";
 import { Navigation } from "@/interfaces/navigations";
+import { useIntroContext } from "@/contexts/IntroContext";
 
 export default function Header() {
   const [navigation, setNavigation] = useState<Navigation[]>([]);
   const [isPending, startTransition] = useTransition();
+  const { isIntroFinished } = useIntroContext();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export default function Header() {
     return <h1>Carregando...</h1>;
   }
 
-  return (
+  return isIntroFinished ? (
     <header className="rounded rounded-full bg-gray-900 py-4 sticky top-0 z-50 px-5 container mx-auto flex flex-col md:flex-row justify-between items-center">
       <DynamicBlurImage src="/light-logo.png" width={110} />
       <nav>
@@ -54,5 +56,5 @@ export default function Header() {
       </nav>
       <SocialIcons />
     </header>
-  );
+  ) : null;
 }
