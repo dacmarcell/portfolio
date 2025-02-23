@@ -19,7 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Portfólio DevMarcell",
-  description: "Portfólio de Marcell Dactes",
+  description: "Portfólio do DevMarcell",
+  applicationName: "Portfólio DM",
 };
 
 export default function RootLayout({
