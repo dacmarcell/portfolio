@@ -39,14 +39,17 @@ export default function SobrePage() {
                 animation="fadeIn"
                 className="font-normal text-lg"
               >
-                Bacharelando em Ciência da Computação e Desenvolvedor Web
-                FullStack com mais de um ano de experiência. Sou apaixonado por
-                escrever código limpo e eficiente, seguindo os princípios DRY,
-                SOLID, KISS e Clean Code . Sempre busco criar aplicações
-                escaláveis e performáticas utilizando tecnologias modernas. Fora
-                do trabalho, estou sempre estudando algo novo ou desenvolvendo
-                projetos pessoais. Tenho um gato chamado Django 🐱, sou fã de
-                pizza 🍕 e movido pela busca constante por aprendizado.
+                Olá! Sou Marcell Andrade, estudante de Ciência da Computação e
+                desenvolvedor web com mais de um ano de experiência. Meu
+                objetivo? Criar aplicações rápidas, intuitivas e bem
+                estruturadas, garantindo que tudo funcione de forma eficiente
+                nos bastidores. Adoro transformar ideias em realidade através da
+                tecnologia, sempre seguindo boas práticas para garantir um
+                código organizado e de fácil manutenção. Focado em construir
+                soluções digitais para tornar a vida mais simples e produtiva.
+                Fora do código, estou sempre aprendendo algo novo, explorando
+                projetos pessoais ou aproveitando o tempo com meu gato, 🐱
+                Django! Vamos criar algo incrível juntos? 🚀
               </TextAnimate>
             </div>
           </FadeIn>
