@@ -15,7 +15,7 @@
     "dayjs": "^1.11.13",
     "lucide-react": "^0.475.0",
     "motion": "^11.18.2",
-    "next": "15.2.3",
+    "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-floating-whatsapp": "^5.0.8",
