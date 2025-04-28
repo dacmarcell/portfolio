@@ -37,7 +37,7 @@ export function RepositoryWrapper(props: { children: React.ReactNode }) {
       setFoundRepository(foundRepo);
     };
 
-    if (repositories.length > 0) {
+    if (repositories?.length > 0) {
       getRepositoryByID(repositories);
     }
   }, [ID, repositories]);
