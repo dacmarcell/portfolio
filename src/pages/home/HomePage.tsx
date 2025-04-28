@@ -36,9 +36,10 @@ export default function HomePage() {
     }, 5000);
   };
 
-  const favoriteProjects = useMemo(() => {
-    return projects.filter((project) => project.isFavorite);
-  }, [projects]);
+  const firstThreeFavoriteProjects = useMemo(
+    () => projects.filter((project) => project.isFavorite).slice(0, 3),
+    [projects]
+  );
 
   if (isPending) {
     return (
@@ -126,15 +127,13 @@ export default function HomePage() {
       <div className="mt-[210px]">
         <MarqueeTechs />
       </div>
-      {/* Projetos selecionados */}
-      {/* Card de projeto */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">
             🚀 Projetos Selecionados
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {favoriteProjects.map((project) => (
+            {firstThreeFavoriteProjects.map((project) => (
               <Card
                 isProject
                 key={project.id}
