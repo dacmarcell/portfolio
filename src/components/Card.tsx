@@ -5,6 +5,7 @@ import ArrowIcon from "./ui/ArrowIcon";
 import { useRepositoryContext } from "@/contexts/RepositoryContext";
 import Chip from "./ui/Chip";
 import FadeIn from "./motion/FadeIn";
+import { useState } from "react";
 
 interface CardProps {
   title: string;
@@ -13,14 +14,23 @@ interface CardProps {
   technologies?: string[];
   isProject?: boolean;
   isRepository?: boolean;
+  maxDescriptionLength?: number;
 }
 
 export default function Card(props: CardProps) {
-  const { description, title, id, isProject, isRepository, technologies } =
-    props;
+  const {
+    description,
+    title,
+    id,
+    isProject,
+    isRepository,
+    technologies,
+    maxDescriptionLength = 100,
+  } = props;
 
   const router = useRouter();
   const { setID } = useRepositoryContext();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -35,6 +45,17 @@ export default function Card(props: CardProps) {
     }
   };
 
+  const toggleReadMore = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsExpanded(!isExpanded);
+  };
+
+  const isDescriptionLong = description.length > maxDescriptionLength;
+  const displayedDescription =
+    isExpanded ?? !isDescriptionLong
+      ? description
+      : `${description.slice(0, maxDescriptionLength)}...`;
+
   return (
     <div className="group max-w-sm p-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700 rounded-xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
       {/* Overlay com brilho */}
@@ -45,7 +66,15 @@ export default function Card(props: CardProps) {
       </h5>
 
       <FadeIn>
-        <p className="mb-4 font-normal text-gray-300">{description}</p>
+        <p className="mb-4 font-normal text-gray-300">{displayedDescription}</p>
+        {isDescriptionLong && (
+          <button
+            onClick={toggleReadMore}
+            className="text-green-500 hover:text-green-400 font-semibold"
+          >
+            {isExpanded ? "Leia menos" : "Leia mais"}
+          </button>
+        )}
       </FadeIn>
 
       {/* Tecnologias usadas */}
