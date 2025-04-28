@@ -50,7 +50,7 @@ const projects = [
     description:
       "Site destinado a uma campanha política para vereador de uma cidade no interior da Bahia. O site foi desenvolvido com React e SCSS. O site é responsivo e interativo, com um design moderno e atraente. O site possui uma área de denúncias, uma área de propostas e uma página de contato direto com o candidato.",
     url: "https://www.barroneles.com/",
-    isFavorite: true,
+    isFavorite: false,
     technologies: ["React", "SCSS"],
   },
   {
