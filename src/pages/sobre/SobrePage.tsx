@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import { FaTrophy } from "react-icons/fa";
+import { useEffect } from "react";
 
 import { TextAnimate } from "@/components/magicui/text-animate";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import FadeIn from "@/components/motion/FadeIn";
 import Line from "@/components/ui/Line";
 import ExperiencesList from "./components/ExperiencesList";
+import { useIntroContext } from "@/contexts/IntroContext";
 
 export default function SobrePage() {
+  const { setIsIntroFinished } = useIntroContext();
+
+  useEffect(() => {
+    setIsIntroFinished(true);
+  }, [setIsIntroFinished]);
+
   return (
     <>
       <section className="px-6 md:px-20 py-16">
