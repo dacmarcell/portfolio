@@ -4,7 +4,7 @@ const navigation = [
   { id: 1, formattedName: "Início", endpoint: "/" },
   { id: 4, formattedName: "Sobre mim", endpoint: "/sobre" },
   { id: 2, formattedName: "Projetos", endpoint: "/projetos" },
-  { id: 3, formattedName: "Repositórios", endpoint: "/repositorios" },
+  // { id: 3, formattedName: "Repositórios", endpoint: "/repositorios" },
   {
     id: 5,
     formattedName: "Loja",
