@@ -45,22 +45,19 @@ export default function SobrePage() {
                 animation="fadeIn"
                 className="font-normal text-lg"
               >
-                Olá! Sou Marcell Andrade, estudante de Ciência da Computação e
-                desenvolvedor web com mais de um ano de experiência. Meu
-                objetivo? Criar aplicações rápidas, intuitivas e bem
-                estruturadas, garantindo que tudo funcione de forma eficiente
-                nos bastidores. Adoro transformar ideias em realidade através da
-                tecnologia, sempre seguindo boas práticas para garantir um
-                código organizado e de fácil manutenção. Focado em construir
-                soluções digitais para tornar a vida mais simples e produtiva.
-                Fora do código, estou sempre aprendendo algo novo, explorando
-                projetos pessoais ou aproveitando o tempo com meu gato, 🐱
-                Django! Vamos criar algo incrível juntos? 🚀
+                Sou desenvolvedor Full Stack com foco em soluções escaláveis e
+                robustas, especializado em PHP e JavaScript com experiência
+                sólida em Laravel, Node.js, C#, TypeScript, Rust e Python. Tenho
+                atuado na criação de APIs, otimização de sistemas e arquiteturas
+                escaláveis, sempre seguindo boas práticas como Clean Code e
+                SOLID. Trabalho com cloud computing (AWS), frameworks modernos
+                como Next.js, React, Quasar e ferramentas como Docker. Sou
+                motivado por desafios, aprendizado contínuo e colaboração para
+                entregar valor real aos projetos.
               </TextAnimate>
             </div>
           </FadeIn>
         </div>
-
         {/* Segunda Seção - Tecnologias */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 mt-16">
           <FadeIn>
