@@ -30,9 +30,9 @@ export default function ProjetosPage() {
   }
 
   return (
-    <main className="p-10">
+    <main className="mt-0 m-20">
       <Title>Projetos</Title>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-3 gap-20  mt-0 m-20 p-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => {
           return (
             <Card
