@@ -28,7 +28,9 @@ export default function ExperiencesList() {
   return (
     <div className="mx-auto p-10 rounded-lg">
       <FadeIn>
-        <h2 className="text-2xl font-bold mb-6">Experiências Profissionais</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Experiências Profissionais
+        </h2>
       </FadeIn>
       <div className="space-y-6">
         {experiences.map((experience) => (
