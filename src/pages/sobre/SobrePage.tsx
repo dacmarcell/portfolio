@@ -101,7 +101,9 @@ export default function SobrePage() {
         </div>
         {/* <UFBA2024HackathonSection /> */}
       </section>
-      <Line />
+      <div className="flex justify-center">
+        <Line />
+      </div>
       <ExperiencesList />
     </>
   );
