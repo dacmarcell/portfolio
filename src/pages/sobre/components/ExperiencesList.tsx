@@ -15,7 +15,9 @@ export default function ExperiencesList() {
     startTransition(() => {
       fetch("/api/experiences")
         .then((response) => response.json())
-        .then((experiencesData) => setExperiences(experiencesData));
+        .then((experiences) => {
+          setExperiences(experiences);
+        });
     });
   }, []);
 
@@ -36,7 +38,6 @@ export default function ExperiencesList() {
           >
             {/* Overlay com brilho ao passar o mouse */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-gray-900 opacity-30 rounded-xl transition-opacity group-hover:opacity-40"></div>
-
             <FadeIn>
               {/* Título e Empresa */}
               <div className="flex justify-between items-center mb-6">
@@ -47,7 +48,6 @@ export default function ExperiencesList() {
                   {experience.startMonth} - {experience.endMonth}
                 </span>
               </div>
-
               {/* Descrição da Experiência */}
               <ReactMarkdown
                 rehypePlugins={[rehypeRaw]}
@@ -55,12 +55,10 @@ export default function ExperiencesList() {
               >
                 {experience.description}
               </ReactMarkdown>
-
               {/* Empresa */}
               <div className="mt-5">
                 <b className="text-lg text-green-400">{experience.company}</b>
               </div>
-
               {/* Tecnologias Utilizadas */}
               <div className="mt-5">
                 <h4 className="text-sm font-semibold text-gray-400">
