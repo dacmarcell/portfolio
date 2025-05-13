@@ -1,9 +1,9 @@
 export interface Experience {
   id: number;
-  title: string;
-  company: string;
-  startMonth: string;
-  endMonth: string;
-  technologies: string[];
+  enterprise: string;
+  position: string;
+  period: string;
+  duration: string | null;
+  location: string;
   description: string;
 }
