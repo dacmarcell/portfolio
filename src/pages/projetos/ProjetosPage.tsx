@@ -32,7 +32,7 @@ export default function ProjetosPage() {
   return (
     <main className="mt-0 m-20">
       <Title>Projetos</Title>
-      <div className="grid grid-cols-3 gap-20  mt-0 m-20 p-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-3 gap-x-20 gap-y-5 mt-0 m-20 p-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => {
           return (
             <Card
