@@ -42,10 +42,10 @@ export default function ExperiencesList() {
               {/* Título e Empresa */}
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold text-white">
-                  {experience.title}
+                  {experience.position}
                 </h3>
                 <span className="text-sm font-medium text-gray-400 bg-gray-800 px-3 py-1 rounded-lg">
-                  {experience.startMonth} - {experience.endMonth}
+                  {experience.period}
                 </span>
               </div>
               {/* Descrição da Experiência */}
@@ -57,23 +57,9 @@ export default function ExperiencesList() {
               </ReactMarkdown>
               {/* Empresa */}
               <div className="mt-5">
-                <b className="text-lg text-green-400">{experience.company}</b>
-              </div>
-              {/* Tecnologias Utilizadas */}
-              <div className="mt-5">
-                <h4 className="text-sm font-semibold text-gray-400">
-                  Tecnologias:
-                </h4>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {experience.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs font-semibold bg-gray-700 text-white px-3 py-1 rounded-full shadow-md transition transform hover:scale-105"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <b className="text-lg text-green-400">
+                  {experience.enterprise}
+                </b>
               </div>
             </FadeIn>
           </div>
