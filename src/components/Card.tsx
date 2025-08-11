@@ -59,7 +59,7 @@ export default function Card(props: CardProps) {
 
   return (
     <div
-      className="group w-full p-5 bg-gray-800/50 border border-gray-700 rounded-lg shadow-md hover:bg-gray-800 transition hover:cursor-pointer"
+      className="group w-full p-5 bg-white/60 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:bg-white dark:hover:bg-gray-800 transition hover:cursor-pointer"
       onClick={handleClick}
       role="link"
       tabIndex={0}
@@ -70,10 +70,10 @@ export default function Card(props: CardProps) {
         }
       }}
     >
-      <h5 className="mb-2 text-xl font-semibold text-white">
+      <h5 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
         <FadeIn>{title}</FadeIn>
       </h5>
-      <div className="text-sm text-gray-300">
+      <div className="text-sm text-gray-700 dark:text-gray-300">
         <FadeIn>{displayedDescription}</FadeIn>
       </div>
       {technologies && technologies.length > 0 && (

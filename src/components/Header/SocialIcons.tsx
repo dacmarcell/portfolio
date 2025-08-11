@@ -15,28 +15,28 @@ export default function SocialIcons({ size = 25 }: SocialIconsProps) {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <FaGithub className="text-white hover:text-green-800" size={size} />
+        <FaGithub className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={size} />
       </a>
       <a
         href={app.social_links.linkedin}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <FaLinkedin className="text-white hover:text-green-800" size={size} />
+        <FaLinkedin className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={size} />
       </a>
       <a
         href={app.social_links.email}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <MdEmail className="text-white hover:text-green-800" size={size} />
+        <MdEmail className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={size} />
       </a>
       <a
         href={app.social_links.whatsapp}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <MdWhatsapp className="text-white hover:text-green-800" size={size} />
+        <MdWhatsapp className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={size} />
       </a>
     </div>
   );

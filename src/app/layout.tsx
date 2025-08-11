@@ -39,9 +39,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { try { const d = document.documentElement; const m = window.matchMedia('(prefers-color-scheme: dark)'); const apply = () => { if (localStorage.theme === 'dark' || (!localStorage.theme && m.matches)) d.classList.add('dark'); else d.classList.remove('dark'); }; apply(); m.addEventListener('change', apply); } catch (e) {} })();`,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white`}
       >
         <IntroWrapper>
           <RepositoryWrapper>

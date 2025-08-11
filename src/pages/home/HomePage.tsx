@@ -41,7 +41,7 @@ export default function HomePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-24 lg:mt-[200px] gap-6 items-center">
         {/* BIO - Introdução */}
         <div className="flex flex-col justify-center md:items-start md:pl-20">
-          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl md:mr-4 border border-white bg-white/10 backdrop-blur-md shadow-lg">
+          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl md:mr-4 border border-gray-200 dark:border-white/20 bg-white/60 dark:bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
               {/* Nome e introdução animados */}
               <div className="text-5xl font-bold text-white">
@@ -77,7 +77,7 @@ export default function HomePage() {
           </div>
 
           {/* Contato */}
-          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-white bg-white/10 backdrop-blur-md shadow-lg">
+          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-gray-200 dark:border-white/20 bg-white/60 dark:bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
               <h1 className="font-semibold text-xl text-white">📞 Contato</h1>
             </FadeIn>

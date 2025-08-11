@@ -22,7 +22,7 @@ export default function BottomDock() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaGithub className="text-white hover:text-green-800" size={25} />
+              <FaGithub className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={25} />
             </a>
           </DockIcon>
           <DockIcon>
@@ -31,10 +31,7 @@ export default function BottomDock() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaLinkedin
-                className="text-white hover:text-green-800"
-                size={25}
-              />
+              <FaLinkedin className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={25} />
             </a>
           </DockIcon>
           <DockIcon>
@@ -43,7 +40,7 @@ export default function BottomDock() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <MdEmail className="text-white hover:text-green-800" size={25} />
+              <MdEmail className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={25} />
             </a>
           </DockIcon>
           <DockIcon>
@@ -53,10 +50,7 @@ export default function BottomDock() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <MdWhatsapp
-                className="text-white hover:text-green-800"
-                size={25}
-              />
+              <MdWhatsapp className="text-gray-800 dark:text-white hover:text-green-700 dark:hover:text-green-800" size={25} />
             </a>
           </DockIcon>
         </Dock>
