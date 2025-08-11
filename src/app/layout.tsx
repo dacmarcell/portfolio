@@ -21,6 +21,17 @@ export const metadata: Metadata = {
   title: "Portfólio DevMarcell",
   description: "Portfólio do DevMarcell",
   applicationName: "Portfólio DM",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180" },
+    ],
+    other: [
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#16a34a" },
+    ],
+  },
 };
 
 export default function RootLayout({

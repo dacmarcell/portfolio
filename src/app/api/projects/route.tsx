@@ -6,7 +6,7 @@ const projects = [
     title: "Simulador de crescimento poupulacional - Modelagem Computacional",
     description:
       "Um aplicativo interativo que permite visualizar modelos matemáticos de crescimento populacional ao longo do tempo. Esta ferramenta educativa simula como populações crescem sob diferentes condições através de dois modelos fundamentais: \n\nModelo Exponencial: Ilustra crescimento contínuo sem limitações de recursos\n\nModelo Logístico: Demonstra crescimento que desacelera ao se aproximar da capacidade de suporte do ambiente\n\nOs usuários podem ajustar parâmetros como população inicial, taxa de crescimento e capacidade de suporte, observando em tempo real como essas variáveis afetam o desenvolvimento populacional através de gráficos dinâmicos. Ideal para estudantes, educadores e profissionais interessados em ecologia, demografia, planejamento urbano e análise de dados.\n\nDesenvolvido com React, TypeScript e Recharts, o simulador oferece uma interface intuitiva para explorar conceitos matemáticos complexos de forma visual e acessível.Tentar novamenteO Claude pode cometer erros. Confira sempre as respostas.",
-    url: "https://modelo-crescimento-populacional.vercel.app/",
+    url: "https://modelo-crescimento-populacional.devmarcell.com/",
     isFavorite: true,
     technologies: ["React", "Recharts", "HTML5", "CSS3"],
   },

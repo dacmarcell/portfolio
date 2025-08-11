@@ -15,6 +15,7 @@ interface CardProps {
   isProject?: boolean;
   isRepository?: boolean;
   maxDescriptionLength?: number;
+  href?: string; // for external link when isProject
 }
 
 export default function Card(props: CardProps) {
@@ -26,6 +27,7 @@ export default function Card(props: CardProps) {
     isRepository,
     technologies,
     maxDescriptionLength = 100,
+    href,
   } = props;
 
   const router = useRouter();
@@ -38,7 +40,10 @@ export default function Card(props: CardProps) {
 
   const handleClick = () => {
     if (isProject) {
-      router.push(`/projetos/${id}`);
+      if (href) {
+        window.open(href, "_blank", "noopener,noreferrer");
+        return;
+      }
     }
 
     if (isRepository) {
@@ -54,24 +59,27 @@ export default function Card(props: CardProps) {
 
   return (
     <div
-      className="group max-w-sm p-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700 rounded-xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl hover:cursor-pointer"
+      className="group max-w-sm p-5 bg-gray-800/50 border border-gray-700 rounded-lg shadow-md hover:bg-gray-800 transition hover:cursor-pointer"
       onClick={handleClick}
+      role="link"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
     >
-      {/* Overlay com brilho */}
-      <div className="inset-0 bg-gradient-to-t from-transparent to-gray-900 opacity-30 rounded-xl transition group-hover:opacity-40"></div>
-      <h5 className="mb-3 text-2xl font-bold tracking-tight text-white">
+      <h5 className="mb-2 text-xl font-semibold text-white">
         <FadeIn>{title}</FadeIn>
       </h5>
-      <FadeIn>
-        <p className="mb-4 font-normal text-gray-300">{displayedDescription}</p>
-      </FadeIn>
-      {/* Tecnologias usadas */}
+      <div className="text-sm text-gray-300">
+        <FadeIn>{displayedDescription}</FadeIn>
+      </div>
       {technologies && technologies.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-3">
           {technologies.map((technology) => (
-            <FadeIn key={technology}>
-              <Chip element={technology} />
-            </FadeIn>
+            <Chip key={technology} element={technology} />
           ))}
         </div>
       )}

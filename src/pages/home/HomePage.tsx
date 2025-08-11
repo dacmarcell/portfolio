@@ -44,8 +44,17 @@ export default function HomePage() {
   if (isPending) {
     return (
       <main className="p-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <h1>Carregando...</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="p-5 rounded-lg border border-gray-700 bg-gray-800/40 animate-pulse"
+            >
+              <div className="h-6 w-2/3 bg-emerald-600/40 rounded mb-3"></div>
+              <div className="h-4 w-full bg-gray-600/40 rounded mb-2"></div>
+              <div className="h-4 w-5/6 bg-gray-600/40 rounded"></div>
+            </div>
+          ))}
         </div>
       </main>
     );
@@ -139,6 +148,7 @@ export default function HomePage() {
                 key={project.id}
                 title={project.title}
                 id={project.id.toString()}
+                href={project.url}
                 description={project.description}
                 technologies={project.technologies}
               />
