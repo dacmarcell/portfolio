@@ -6,7 +6,6 @@ import { useMemo, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 import SocialIcons from "./SocialIcons";
-import DynamicBlurImage from "../DynamicBlurImage";
 import { Navigation } from "@/interfaces/navigations";
 import { navigation as NAV } from "@/data/navigation";
 import { useIntroContext } from "@/contexts/IntroContext";
