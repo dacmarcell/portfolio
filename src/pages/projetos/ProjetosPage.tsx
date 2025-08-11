@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 
 export default function ProjetosPage() {
   return (
-    <main className="mt-0 m-20">
+    <main className="mt-0 px-4 sm:px-6 lg:px-20 py-6">
       <Title>Projetos</Title>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {projects.map((project) => (

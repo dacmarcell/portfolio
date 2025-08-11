@@ -59,7 +59,7 @@ export default function Card(props: CardProps) {
 
   return (
     <div
-      className="group max-w-sm p-5 bg-gray-800/50 border border-gray-700 rounded-lg shadow-md hover:bg-gray-800 transition hover:cursor-pointer"
+      className="group w-full p-5 bg-gray-800/50 border border-gray-700 rounded-lg shadow-md hover:bg-gray-800 transition hover:cursor-pointer"
       onClick={handleClick}
       role="link"
       tabIndex={0}

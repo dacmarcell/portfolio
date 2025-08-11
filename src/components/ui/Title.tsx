@@ -10,7 +10,7 @@ interface TitleProps {
 export default function Title({ children, className }: TitleProps) {
   return (
     <FadeIn>
-      <h1 className={"text-4xl font-semibold my-8 " + className}>{children}</h1>
+      <h1 className={"text-2xl sm:text-3xl md:text-4xl font-semibold my-6 md:my-8 " + className}>{children}</h1>
     </FadeIn>
   );
 }
