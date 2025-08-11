@@ -41,59 +41,58 @@ function getDuration(period: string) {
 
 export async function GET() {
   const experiences = [
+     {
+      enterprise: "Horizon Inovação e Tecnologia",
+      position: "Desenvolvedor de Software FullStack Junior",
+      period: "maio de 2025 - atualmente",
+      location: "Salvador, Bahia, Brasil",
+      description:
+        "Liderança no desenvolvimento de aplicativos escaláveis e de alta performance com Laravel, Vue.js e React. Implantação em ambientes Oracle e Locaweb, garantindo estabilidade e segurança. Utilização estratégica de metodologias ágeis e inteligência artificial (Lovable e Cursor) para acelerar entregas e maximizar resultados. Gestão eficiente de projetos e coordenação de equipe com três desenvolvedores, assegurando qualidade e inovação contínua.",
+    },
     {
-      id: 1,
       enterprise: "SOFTPAR BRASIL LTDA",
       position: "Desenvolvedor de Software FullStack Junior",
       period: "janeiro de 2025 - maio de 2025",
-      duration: null,
       location: "Salvador, Bahia, Brasil",
       description:
         "Responsável pelo desenvolvimento de aplicativos escaláveis e dinâmicos, utilizando Laravel e Quasar (Vue.js). Trabalho com metodologias ágeis (Scrum). Realizo a implantação de sistemas em AWS EC2 e S3, além de gerenciar o controle de versões com Git e Gogs.",
     },
     {
-      id: 2,
       enterprise: "Diamantes Consultoria",
       position: "Desenvolvedor de software líder",
       period: "maio de 2024 - janeiro de 2025",
-      duration: null,
       location: "Salvador, Bahia, Brasil",
       description:
         "Liderei projetos de desenvolvimento de software corporativo, implementando Git Flow e semantic versioning para garantir a organização e rastreabilidade do código além da implementação de arquiteturas escaláveis. Projetos incluíram a criação de soluções escaláveis usando TypeScript, Next.js, Node.js, e automação de processos, além de otimização de queries PostgreSQL para melhorar a performance do sistema.",
     },
     {
-      id: 3,
       enterprise: "Diamantes Consultoria",
       position: "Desenvolvedor de Software FullStack Junior",
       period: "fevereiro de 2024 - janeiro de 2025",
-      duration: null,
       location: "Salvador, Bahia, Brasil",
       description:
         "Desenvolvimento de soluções escaláveis usando Typescript, Next.js e Node.js. Automação de processos, desenvolvimento de landing pages de qualidade em tempo recorde.",
     },
     {
-      id: 4,
       enterprise: "INFINITY SCHOOL - Visual Art Creative Center",
       position: "Information Technology Teacher",
       period: "fevereiro de 2024 - abril de 2024",
-      duration: null,
       location: "Salvador, Bahia, Brasil",
       description:
         "Planejei e ministrei aulas de programação e desenvolvimento web, com foco em HTML, CSS, JavaScript, e Python. Promovi o aprendizado prático, capacitando os alunos com conceitos essenciais da indústria.",
     },
     {
-      id: 5,
       enterprise: "GoodVibe",
       position: "Mobile Developer",
       period: "abril de 2023 - agosto de 2023",
-      duration: null,
       location: "Salvador, Bahia, Brasil",
       description:
         "No projeto GoodVibe, desenvolvi um aplicativo mobile usando React Native para oferecer suporte psicológico acessível. Trabalhei no backend com Node.js, Express.js, e Sequelize.js, e utilizei Redux Saga para gerenciamento de estado eficiente, garantindo alta qualidade de código com Jest para testes.",
     },
   ];
 
-  const formattedExperiences = experiences.map((experience) => ({
+  const formattedExperiences = experiences.map((experience, index) => ({
+    id: index + 1,
     ...experience,
     duration: getDuration(experience.period),
   }));

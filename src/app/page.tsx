@@ -9,10 +9,17 @@ export default function Home() {
   const { isIntroFinished, setIsIntroFinished } = useIntroContext();
 
   useEffect(() => {
-    setTimeout(() => {
+    const seen = localStorage.getItem("intro_seen");
+    if (seen) {
       setIsIntroFinished(true);
-    }, 10000);
-  });
+      return;
+    }
+    const timer = setTimeout(() => {
+      setIsIntroFinished(true);
+      localStorage.setItem("intro_seen", "1");
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [setIsIntroFinished]);
 
   return isIntroFinished ? (
     <HomePage />

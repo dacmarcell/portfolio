@@ -3,8 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import { RepositoryWrapper } from "@/contexts/RepositoryContext";
-import Chatbot from "@/components/Chatbot";
-import BottomDock from "@/components/Dock";
+import ClientOnlyDockChat from "@/components/ClientOnlyDockChat";
 import { IntroWrapper } from "@/contexts/IntroContext";
 
 const geistSans = Geist({
@@ -49,8 +48,7 @@ export default function RootLayout({
             <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
               <Header />
               {children}
-              <Chatbot />
-              <BottomDock />
+              <ClientOnlyDockChat />
             </div>
           </RepositoryWrapper>
         </IntroWrapper>

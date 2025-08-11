@@ -15,9 +15,7 @@ export default function ExperiencesList() {
     startTransition(() => {
       fetch("/api/experiences")
         .then((response) => response.json())
-        .then((experiences) => {
-          setExperiences(experiences);
-        });
+        .then(setExperiences);
     });
   }, []);
 

@@ -1,9 +1,10 @@
 "use client";
 
 import { FaCheck, FaRegCopy } from "react-icons/fa";
-import { useEffect, useMemo, useState, useTransition } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import Typical from "react-typical";
+import dynamic from "next/dynamic";
+const Typical = dynamic(() => import("react-typical"), { ssr: false });
 import Link from "next/link";
 
 import { MarqueeTechs } from "@/components/MarqueeTechs";
@@ -12,19 +13,11 @@ import Card from "@/components/Card";
 import { app } from "@/lib/constants";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import { Project } from "@/interfaces/projects";
+import { projects as ALL_PROJECTS } from "@/data/projects";
 
 export default function HomePage() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects] = useState<Project[]>(ALL_PROJECTS);
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
-  const [isPending, startTransition] = useTransition();
-
-  useEffect(() => {
-    startTransition(() => {
-      fetch("/api/projects")
-        .then((response) => response.json())
-        .then((projectsData) => setProjects(projectsData));
-    });
-  }, []);
 
   const copyEmailToClipboard = () => {
     navigator.clipboard.writeText(app.email);
@@ -41,24 +34,7 @@ export default function HomePage() {
     [projects]
   );
 
-  if (isPending) {
-    return (
-      <main className="p-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="p-5 rounded-lg border border-gray-700 bg-gray-800/40 animate-pulse"
-            >
-              <div className="h-6 w-2/3 bg-emerald-600/40 rounded mb-3"></div>
-              <div className="h-4 w-full bg-gray-600/40 rounded mb-2"></div>
-              <div className="h-4 w-5/6 bg-gray-600/40 rounded"></div>
-            </div>
-          ))}
-        </div>
-      </main>
-    );
-  }
+  // No client fetch; data is local for instant render
 
   return (
     <main>
