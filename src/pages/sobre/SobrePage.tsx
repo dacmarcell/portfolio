@@ -45,15 +45,8 @@ export default function SobrePage() {
                 animation="fadeIn"
                 className="font-normal text-lg"
               >
-                Sou desenvolvedor Full Stack com foco em soluções escaláveis e
-                robustas, especializado em PHP e JavaScript com experiência
-                sólida em Laravel, Node.js, C#, TypeScript, Rust e Python. Tenho
-                atuado na criação de APIs, otimização de sistemas e arquiteturas
-                escaláveis, sempre seguindo boas práticas como Clean Code e
-                SOLID. Trabalho com cloud computing (AWS), frameworks modernos
-                como Next.js, React, Quasar e ferramentas como Docker. Sou
-                motivado por desafios, aprendizado contínuo e colaboração para
-                entregar valor real aos projetos.
+                Desenvolvedor FullStack com mais de um ano de experiência, desenvolvedor com foco em estruturação de sistemas escaláveis, utilizando práticas modernas de desenvolvimento de software. Em constante atualização e aprendizado. Aplicando princípios como DRY, SOLID, KISS e Clean Code.
+                Nas horas vagas, aproveito para estudar tendências da área ou desenvolver projetos pessoais. Adoro explorar novas tecnologias.
               </TextAnimate>
             </div>
           </FadeIn>
@@ -78,12 +71,7 @@ export default function SobrePage() {
                 animation="fadeIn"
                 className="font-normal text-lg"
               >
-                Atualmente, trabalho com o ecossistema PHP, especialmente com
-                Laravel, além de ser proficiente em diversas linguagens como C#,
-                TypeScript, Rust e Python. Tenho experiência com frameworks como
-                Next.js, .NET e Quasar. Como um desenvolvedor Júnior curioso,
-                adoro explorar novas tecnologias e aprimorar minhas habilidades
-                constantemente.
+                Atualmente, me desenvolvendo profissionalmente com o ecossistema Laravel e Vue.js. minhas skills além do PHP, abrangem as linguagens C#, Typescript, Rust e Python. Experiência comprovada com diversos frameworks como Next.js, .NET, Vue.js e Laravel.
               </TextAnimate>
             </div>
           </FadeIn>
