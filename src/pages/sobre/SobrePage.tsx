@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { TextAnimate } from "@/components/magicui/text-animate";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
-import FadeIn from "@/components/motion/FadeIn";
+import Reveal from "@/components/motion/Reveal";
 import Line from "@/components/ui/Line";
 import ExperiencesList from "./components/ExperiencesList";
 import { useIntroContext } from "@/contexts/IntroContext";
@@ -19,15 +19,15 @@ export default function SobrePage() {
       <section className="px-6 md:px-20 py-16">
         {/* Primeira Seção - Sobre Mim */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-          <FadeIn>
+          <Reveal delay={0.05}>
             <DynamicBlurImage
               isRounded
               width={500}
               height={500}
               src="https://avatars.githubusercontent.com/u/83461178?v=4"
             />
-          </FadeIn>
-          <FadeIn>
+          </Reveal>
+          <Reveal delay={0.1}>
             <div className="max-w-xl text-xl font-bold leading-relaxed p-6 border border-gray-700 bg-gray-800/50 rounded-lg shadow-md">
               <span>👨‍💻</span>
               <TextAnimate
@@ -49,11 +49,11 @@ export default function SobrePage() {
                 Nas horas vagas, aproveito para estudar tendências da área ou desenvolver projetos pessoais. Adoro explorar novas tecnologias.
               </TextAnimate>
             </div>
-          </FadeIn>
+          </Reveal>
         </div>
         {/* Segunda Seção - Tecnologias */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 mt-16">
-          <FadeIn>
+          <Reveal delay={0.05}>
             <div className="max-w-xl text-lg leading-relaxed p-6 border border-gray-700 bg-gray-800/50 rounded-lg shadow-md">
               <span>🚀</span>
               <TextAnimate
@@ -74,15 +74,15 @@ export default function SobrePage() {
                 Atualmente, me desenvolvendo profissionalmente com o ecossistema Laravel e Vue.js. minhas skills além do PHP, abrangem as linguagens C#, Typescript, Rust e Python. Experiência comprovada com diversos frameworks como Next.js, .NET, Vue.js e Laravel.
               </TextAnimate>
             </div>
-          </FadeIn>
-          <FadeIn>
+          </Reveal>
+          <Reveal delay={0.1}>
             <DynamicBlurImage
               isRounded
               width={500}
               height={500}
               src="/me.jpg"
             />
-          </FadeIn>
+          </Reveal>
         </div>
         {/* <UFBA2024HackathonSection /> */}
       </section>

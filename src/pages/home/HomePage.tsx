@@ -2,7 +2,7 @@
 
 import { FaCheck, FaRegCopy } from "react-icons/fa";
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 const Typical = dynamic(() => import("react-typical"), { ssr: false });
 import Link from "next/link";
@@ -14,6 +14,7 @@ import { app } from "@/lib/constants";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import { Project } from "@/interfaces/projects";
 import { projects as ALL_PROJECTS } from "@/data/projects";
+import StaggerContainer from "@/components/motion/StaggerContainer";
 
 export default function HomePage() {
   const [projects] = useState<Project[]>(ALL_PROJECTS);
@@ -44,14 +45,14 @@ export default function HomePage() {
           <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl md:mr-4 border border-gray-200 dark:border-white/20 bg-white/60 dark:bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
               {/* Nome e introdução animados */}
-              <div className="text-5xl font-bold text-white">
+              <div className="text-5xl font-bold text-foreground">
                 <Typical
                   steps={["Olá!", 1000, "Me chamo Marcell.", 500]}
                   loop={Infinity}
                   wrapper="h1"
                 />
               </div>
-              <h2 className="text-2xl font-semibold text-gray-300 mt-2">
+              <h2 className="text-2xl font-semibold text-muted-foreground mt-2">
                 Desenvolvendo software de qualidade como desenvolvedor web
                 fullstack 🚀
               </h2>
@@ -62,14 +63,14 @@ export default function HomePage() {
               <motion.a
                 target="_blank"
                 href={app.social_links.linkedin}
-                className="px-5 py-3 mr-3 text-lg font-medium rounded-lg border border-white text-white transition duration-300 hover:bg-white hover:text-black shadow-md"
+                className="px-5 py-3 mr-3 text-lg font-medium rounded-lg border border-foreground text-foreground transition duration-300 hover:bg-white hover:text-black shadow-md"
                 whileHover={{ scale: 1.05 }}
               >
                 🚀 Me contrate
               </motion.a>
               <Link
                 href="/projetos"
-                className="flex flex-row hover:underline items-center dark:text-black"
+                className="flex flex-row hover:underline items-center text-foreground"
               >
                 <span>📂 Ver projetos</span>
               </Link>
@@ -79,11 +80,11 @@ export default function HomePage() {
           {/* Contato */}
           <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-gray-200 dark:border-white/20 bg-white/60 dark:bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
-              <h1 className="font-semibold text-xl text-white">📞 Contato</h1>
+              <h1 className="font-semibold text-xl text-foreground">📞 Contato</h1>
             </FadeIn>
             <FadeIn className="inline-flex items-center group">
               <button
-                className="text-md text-white text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-white-800 p-1 mt-2 transition duration-300"
+                className="text-md text-foreground text-center rounded-lg hover:underline focus:ring-4 focus:outline-none focus:ring-ring p-1 mt-2 transition duration-300"
                 onClick={() => {
                   copyEmailToClipboard();
                 }}
@@ -117,7 +118,7 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
             🚀 Projetos Selecionados
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {firstThreeFavoriteProjects.map((project) => (
               <Card
                 isProject
@@ -129,7 +130,7 @@ export default function HomePage() {
                 technologies={project.technologies}
               />
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
     </main>

@@ -1,7 +1,7 @@
 import DynamicBlurImage from "@/components/DynamicBlurImage";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import FadeIn from "@/components/motion/FadeIn";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FaTrophy } from "react-icons/fa";
 
 export default function UFBA2024HackathonSection() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from "@/interfaces/projects";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import { BsArrowLeft } from "react-icons/bs";
 

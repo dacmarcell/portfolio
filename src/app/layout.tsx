@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import { RepositoryWrapper } from "@/contexts/RepositoryContext";
 import ClientOnlyDockChat from "@/components/ClientOnlyDockChat";
 import { IntroWrapper } from "@/contexts/IntroContext";
+import PageTransition from "@/components/motion/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +44,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(() => { try { const d = document.documentElement; const m = window.matchMedia('(prefers-color-scheme: dark)'); const apply = () => { if (localStorage.theme === 'dark' || (!localStorage.theme && m.matches)) d.classList.add('dark'); else d.classList.remove('dark'); }; apply(); m.addEventListener('change', apply); } catch (e) {} })();`,
+            __html: `(() => { try { const d = document.documentElement; const m = window.matchMedia('(prefers-color-scheme: dark)'); const applyDark = () => { if (localStorage.theme === 'dark' || (!localStorage.theme && m.matches)) d.classList.add('dark'); else d.classList.remove('dark'); }; const applyPalette = () => { d.classList.remove('theme-summer','theme-winter','theme-mono'); const p = localStorage.palette; if (p === 'summer') d.classList.add('theme-summer'); if (p === 'winter') d.classList.add('theme-winter'); if (p === 'mono') d.classList.add('theme-mono'); }; applyDark(); applyPalette(); m.addEventListener('change', applyDark); } catch (e) {} })();`,
           }}
         />
       </head>
@@ -54,7 +55,9 @@ export default function RootLayout({
           <RepositoryWrapper>
             <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
               <Header />
-              {children}
+              <PageTransition>
+                {children}
+              </PageTransition>
               <ClientOnlyDockChat />
             </div>
           </RepositoryWrapper>

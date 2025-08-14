@@ -4,6 +4,7 @@ import Title from "../ui/Title";
 import CustomLink from "../ui/CustomLink";
 import { BsArrowLeft } from "react-icons/bs";
 import { GithubAPIError } from "@/errors/GithubAPIError";
+import StaggerContainer from "@/components/motion/StaggerContainer";
 
 type Repository = {
   id: number;
@@ -17,8 +18,8 @@ export default async function ReposList() {
 
     return (
       <>
-        <Title className="text-white">Repositórios no Github</Title>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <Title className="text-foreground">Repositórios no Github</Title>
+        <StaggerContainer className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {repos.map((repo: Repository) => (
             <Card
               isRepository
@@ -28,7 +29,7 @@ export default async function ReposList() {
               description={repo.description}
             />
           ))}
-        </div>
+        </StaggerContainer>
       </>
     );
   } catch (error) {

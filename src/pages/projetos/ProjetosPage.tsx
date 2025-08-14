@@ -3,12 +3,13 @@
 import Card from "@/components/Card";
 import Title from "@/components/ui/Title";
 import { projects } from "@/data/projects";
+import StaggerContainer from "@/components/motion/StaggerContainer";
 
 export default function ProjetosPage() {
   return (
     <main className="mt-0 px-4 sm:px-6 lg:px-20 py-6">
       <Title>Projetos</Title>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {projects.map((project) => (
           <Card
             isProject
@@ -20,7 +21,7 @@ export default function ProjetosPage() {
             technologies={project.technologies}
           />
         ))}
-      </div>
+      </StaggerContainer>
     </main>
   );
 }

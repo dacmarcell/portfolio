@@ -14,7 +14,7 @@ export function CustomExternalLink(props: Readonly<CustomExternalLinkProps>) {
     <FadeIn>
       <Link
         href={href}
-        className="flex flex-row hover:underline items-center dark:text-black"
+        className="flex flex-row hover:underline items-center text-foreground"
       >
         <span>{children}</span>
         <GoLinkExternal className="ml-1" />

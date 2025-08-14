@@ -6,6 +6,8 @@ import Chip from "./ui/Chip";
 import FadeIn from "./motion/FadeIn";
 import { useIntroContext } from "@/contexts/IntroContext";
 import { useEffect } from "react";
+import { motion } from "motion/react";
+import { useMotionTheme } from "@/hooks/useMotionTheme";
 
 interface CardProps {
   title: string;
@@ -16,6 +18,7 @@ interface CardProps {
   isRepository?: boolean;
   maxDescriptionLength?: number;
   href?: string; // for external link when isProject
+  delay?: number;
 }
 
 export default function Card(props: CardProps) {
@@ -56,9 +59,10 @@ export default function Card(props: CardProps) {
   const displayedDescription = isDescriptionLong
     ? `${description.slice(0, maxDescriptionLength)}...`
     : description;
+  const motionPreset = useMotionTheme();
 
   return (
-    <div
+    <motion.div
       className="group w-full p-5 bg-white/60 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:bg-white dark:hover:bg-gray-800 transition hover:cursor-pointer"
       onClick={handleClick}
       role="link"
@@ -69,6 +73,12 @@ export default function Card(props: CardProps) {
           handleClick();
         }
       }}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-64px" }}
+      transition={{ duration: motionPreset.enterDuration, ease: motionPreset.ease, delay: props.delay ?? 0 }}
+      whileHover={{ translateY: -2 }}
+      whileTap={{ scale: 0.98 }}
     >
       <h5 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
         <FadeIn>{title}</FadeIn>
@@ -83,6 +93,6 @@ export default function Card(props: CardProps) {
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
