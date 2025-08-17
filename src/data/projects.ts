@@ -2,6 +2,15 @@ import { Project } from "@/interfaces/projects";
 
 export const projects: Project[] = [
   {
+    id: 9,
+    title: "VitrineDev",
+    description:
+      "Backend em NestJS para um portfólio de desenvolvedores: expõe uma API REST para gerenciar usuários, projetos, linguagens de programação, áreas de atuação e links sociais, usando PostgreSQL via TypeORM. Inclui documentação Swagger (/docs), um API Explorer embutido (/)",
+    url: "https://github.com/dacmarcell/vitrinedev",
+    isFavorite: true,
+    technologies: ["NestJS", "HTML5", "CSS3", "Javascript", "Typescript"],
+  },
+  {
     id: 8,
     title: "Simulador de crescimento populacional",
     description:
@@ -16,7 +25,7 @@ export const projects: Project[] = [
     description:
       "Uma API que calcula emissões de carbono baseada em consumo, dieta e meio de transporte do usuário",
     url: "https://github.com/dacmarcell/carbonFootprintCalculator",
-    isFavorite: true,
+    isFavorite: false,
     technologies: ["PHP", "Laravel", "PostgreSQL"],
   },
   {
@@ -80,4 +89,3 @@ export const projects: Project[] = [
     technologies: ["Node.js", "TypeORM", "PostgreSQL", "Docker"],
   },
 ];
-
