@@ -80,7 +80,9 @@ export default function HomePage() {
           {/* Contato */}
           <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 md:rounded-3xl w-full md:w-80 md:mr-4 md:mt-10 border border-gray-200 dark:border-white/20 bg-white/60 dark:bg-white/10 backdrop-blur-md shadow-lg">
             <FadeIn>
-              <h1 className="font-semibold text-xl text-foreground">📞 Contato</h1>
+              <h1 className="font-semibold text-xl text-foreground">
+                📞 Contato
+              </h1>
             </FadeIn>
             <FadeIn className="inline-flex items-center group">
               <button
