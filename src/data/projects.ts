@@ -2,6 +2,23 @@ import { Project } from "@/interfaces/projects";
 
 export const projects: Project[] = [
   {
+    id: 10,
+    title: "MPOX Stats",
+    description:
+      "Extensão chrome que mostra dados atualizados sobre a MPOX (varíola dos macacos)",
+    url: "https://github.com/dacmarcell/mpox-stats",
+    isFavorite: true,
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "Javascript",
+      "Typescript",
+      "Node",
+      "Python",
+      "Docker",
+    ],
+  },
+  {
     id: 9,
     title: "VitrineDev",
     description:
@@ -43,7 +60,7 @@ export const projects: Project[] = [
     description:
       "Uma API para gerenciar dados de perfis de portfólios de desenvolvedores de software. Permite customizar individualmente por perfil. O projeto foi desenvolvido com C#, ASP.NET CORE 8, Entity Framework, SQL Server e Docker.",
     url: "https://github.com/dacmarcell/DevStackAPI",
-    isFavorite: true,
+    isFavorite: false,
     technologies: [
       "C#",
       "ASP.NET CORE 8",
