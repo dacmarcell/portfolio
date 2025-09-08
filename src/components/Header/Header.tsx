@@ -9,6 +9,7 @@ import SocialIcons from "./SocialIcons";
 import { Navigation } from "@/interfaces/navigations";
 import { navigation as NAV } from "@/data/navigation";
 import { useIntroContext } from "@/contexts/IntroContext";
+import Image from "next/image";
 
 export default function Header() {
   const navigation: Navigation[] = useMemo(() => NAV, []);
@@ -19,14 +20,14 @@ export default function Header() {
   return isIntroFinished ? (
     <header className="rounded rounded-full bg-gray-900 py-3 md:py-4 sticky top-0 z-50 px-4 md:px-5 container mx-auto flex flex-col md:flex-row justify-between items-center gap-y-3 md:gap-y-0 h-auto md:h-20">
       <div className="w-full md:w-auto flex items-center justify-between">
-        <img
+        <Image
           src="/dark-logo.png"
           width={100}
           height={28}
           alt="DevMarcell logo"
           className="block dark:hidden"
         />
-        <img
+        <Image
           src="/light-logo.png"
           width={100}
           height={28}

@@ -16,6 +16,7 @@ export default function StaggerContainer({
   return (
     <div className={className}>
       {items.map((child, i) => (
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         <div key={(isValidElement(child) && (child.key as any)) ?? i}>
           {child}
         </div>
